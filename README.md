@@ -10,8 +10,8 @@ juliomotol.github.io is a portfolio website to showcase personal projects powere
 ## Project Phases
 ### Phase 1: Design & Planning
 - [x] Website Specification
-- [ ] Brand New Branding 
-- [ ] Wireframes
+- [x] Brand New Branding 
+- [x] Wireframes
 ### Phase 2: Website Development
 - [x] Project Setup
 - [ ] Development
