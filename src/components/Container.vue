@@ -13,13 +13,14 @@
 </script>
 
 <style lang="scss">
-    @import "../scss/bulma-customizations/variables";
+    @import "../scss/bulma-customizations/utilities/all";
 
     .jm-container{
         &__content-wrapper{
             height: 100vh;
             background: linear-gradient($white, $white-ter);
             border-radius: 0 0 32px 0;
+            overflow: hidden;
         }
     }
 </style>

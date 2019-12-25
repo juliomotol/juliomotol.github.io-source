@@ -31,11 +31,18 @@
 	@import "@fortawesome/fontawesome-free/scss/regular.scss";
 	@import "@fortawesome/fontawesome-free/scss/solid.scss";
 
-	@import "./scss/bulma-customizations/variables";
+	@import "./scss/bulma-customizations/utilities/all";
 	@import "bulma/sass/base/_all.sass";
 	
 	@import "./scss/bulma-customizations/elements/button";
+	@import "./scss/bulma-customizations/elements/content";
 	@import "./scss/bulma-customizations/elements/title";
+	
+	@import "./scss/bulma-customizations/form/shared";
+	@import "./scss/bulma-customizations/form/input-textarea";
+	@import "./scss/bulma-customizations/form/tools";
+
+	@import "./scss/bulma-customizations/grid/columns";
 
 	// Components
 	// @import "bulma/sass/components/breadcrumb.sass";
@@ -55,24 +62,19 @@
 	// Elements
 	// @import "bulma/sass/elements/box.sass";
 	// @import "bulma/sass/elements/container.sass";
-	// @import "bulma/sass/elements/content.sass";
-	// @import "bulma/sass/elements/icon.sass";
+	@import "bulma/sass/elements/icon.sass";
 	// @import "bulma/sass/elements/image.sass";
 	// @import "bulma/sass/elements/notification.sass";
 	// @import "bulma/sass/elements/progress.sass";
 	// @import "bulma/sass/elements/table.sass";
-	// @import "bulma/sass/elements/tag.sass";
+	@import "bulma/sass/elements/tag.sass";
 	// @import "bulma/sass/elements/other.sass";
 
 	// Form
-	// @import "bulma/sass/form/shared.sass";
-	// @import "bulma/sass/form/input-textarea.sass";
 	// @import "bulma/sass/form/checkbox-radio.sass";
 	// @import "bulma/sass/form/select.sass";
 	// @import "bulma/sass/form/file.sass";
-	// @import "bulma/sass/form/tools.sass";
 
 	// Grid
-	@import "bulma/sass/grid/columns.sass";
 	// @import "bulma/sass/grid/tiles.sass";
 </style>
