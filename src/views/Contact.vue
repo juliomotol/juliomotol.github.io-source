@@ -70,7 +70,7 @@
                 </div>
             </section>
         </section>
-		<Anchorheader anchor="skills">
+		<Anchorheader anchor="resume">
 			Resume 
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -93,8 +93,6 @@
 </script>
 
 <style lang="scss">
-    @import "../scss/bulma-customizations/utilities/all";
-
     $button-fb-background-color: #3B5998;
     $button-instagram-background-color: #FEDA77, #F58529, #DD2A7B, #8134AF, #515BD4;
     $button-instagram-background-color-hover: null;

@@ -7,10 +7,6 @@
 			Projects
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
-		<Anchorheader anchor="designs">
-			Designs
-		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
 	</section>
 </template>
 

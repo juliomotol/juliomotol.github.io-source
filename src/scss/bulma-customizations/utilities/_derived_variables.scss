@@ -71,21 +71,21 @@ $link: $orange;
 // $link-invert: findColorInvert($link);
 // $link-light: findLightColor($link);
 // $link-dark: findDarkColor($link);
-// $link-visited: $purple;
+$link-visited: darken($link, 10%);
 
-// $link-hover: $grey-darker;
+$link-hover: darken($link, 5%);
 // $link-hover-border: $grey-light;
 
-// $link-focus: $grey-darker;
+$link-focus: darken($link, 5%);
 // $link-focus-border: $blue;
 
-// $link-active: $grey-darker;
+$link-active: darken($link, 5%);
 // $link-active-border: $grey-dark;
 
 // Typography
 
-$family-primary: 'Roboto Slab';
-$family-secondary: 'Open Sans';
+// $family-primary: 'Roboto Slab';
+// $family-secondary: 'Open Sans';
 // $family-code: $family-monospace;
 
 // $size-small: $size-7;

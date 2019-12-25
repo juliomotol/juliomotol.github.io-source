@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap");
+
+$family-sans-serif: "Open Sans";
+
+$family-primary: 'Roboto Slab';
+$family-secondary: 'Open Sans';
+
+@import './scss/bulma-customizations/utilities/all';
+@import 'bulma/sass/base/_all.sass';
+
+@import './scss/bulma-customizations/components/navbar';
+
+@import './scss/bulma-customizations/elements/button';
+@import './scss/bulma-customizations/elements/content';
+@import './scss/bulma-customizations/elements/title';
+
+@import './scss/bulma-customizations/form/shared';
+@import './scss/bulma-customizations/form/input-textarea';
+@import './scss/bulma-customizations/form/tools';
+
+@import './scss/bulma-customizations/grid/columns';
+
+@import './scss/bulma-customizations/layout/footer';
+
+// Components
+// @import "bulma/sass/components/breadcrumb.sass";
+// @import "bulma/sass/components/card.sass";
+// @import "bulma/sass/components/dropdown.sass";
+// @import "bulma/sass/components/level.sass";
+// @import "bulma/sass/components/list.sass";
+// @import "bulma/sass/components/media.sass";
+// @import "bulma/sass/components/menu.sass";
+// @import "bulma/sass/components/message.sass";
+// @import "bulma/sass/components/modal.sass";
+// @import "bulma/sass/components/pagination.sass";
+// @import "bulma/sass/components/panel.sass";
+// @import "bulma/sass/components/tabs.sass";
+
+// Elements
+// @import "bulma/sass/elements/box.sass";
+// @import "bulma/sass/elements/container.sass";
+@import 'bulma/sass/elements/icon.sass';
+// @import "bulma/sass/elements/image.sass";
+// @import "bulma/sass/elements/notification.sass";
+// @import "bulma/sass/elements/progress.sass";
+// @import "bulma/sass/elements/table.sass";
+@import 'bulma/sass/elements/tag.sass';
+// @import "bulma/sass/elements/other.sass";
+
+// Form
+// @import "bulma/sass/form/checkbox-radio.sass";
+// @import "bulma/sass/form/select.sass";
+// @import "bulma/sass/form/file.sass";
+
+// Grid
+// @import "bulma/sass/grid/tiles.sass";

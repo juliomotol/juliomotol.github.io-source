@@ -18,18 +18,13 @@ const routes = [
 	{
 		path: '/works',
 		name: 'works',
-		component: () => import(/* webpackChunkName: "works" */ '../views/Works.vue')
-	},
-	{
-		path: '/works/:category',
-		name: 'works-category',
 		props: {
 			isFullPage: true,
 		},
-		component: () => import(/* webpackChunkName: "works" */ '../views/WorksCategory.vue')
+		component: () => import(/* webpackChunkName: "works" */ '../views/Works.vue')
 	},
 	{
-		path: '/works/:category/:slug',
+		path: '/works/:slug',
 		name: 'works-article',
 		props: {
 			isFullPage: true,
