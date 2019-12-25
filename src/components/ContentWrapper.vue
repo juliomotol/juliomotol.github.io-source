@@ -21,39 +21,46 @@
     @import '~overlayscrollbars/css/OverlayScrollbars.css';
 
     .jm-content-wrapper{
-        min-height: calc(100vh - 54px - 40px);
-        height: calc(100vh - 54px - 40px);
         background: linear-gradient($white, $white-ter);
 
-        &:before, &:after{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 32px;
-            z-index: 2;
+        @include touch(){
+            .page{
+                padding: 32px;
+            }
         }
-        &:before{
-            top: 0;
-            background: linear-gradient($white, transparent);
-        }
-        &:after{
-            bottom:0;
-            background: linear-gradient(transparent, $white-ter);
-        }
-        .page{
-            padding: 32px 64px;
-        }
-        .os-scrollbar{
-            z-index: 3;
-        }
+		@include from($tablet){
+            height: calc(100vh - 54px - 40px);
+            min-height: calc(100vh - 54px - 40px);
 
+            .page{
+                padding: 32px 64px;
+            }
+            &:before, &:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 32px;
+                z-index: 2;
+            }
+            &:before{
+                top: 0;
+                background: linear-gradient($white, transparent);
+            }
+            &:after{
+                bottom:0;
+                background: linear-gradient(transparent, $white-ter);
+            }
+            .os-scrollbar{
+                z-index: 3;
+            }
+        }
         .fade-out-slide-in{
             &-enter{
                 opacity: 0;
                 transform: translateX(-50%) !important;
 
                 &-active{
-                    transition: all .75s ease;
+                    transition: all .75s ease-out;
                 }
             }
             &-leave{
@@ -61,9 +68,10 @@
                     opacity: 0;
                 }
                 &-active{
-                    transition: all .25s ease;
+                    transition: all .25s ease-in;
                 }
             }
         }
     }
+
 </style>

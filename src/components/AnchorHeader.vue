@@ -1,6 +1,6 @@
 <template>
     <h2 class="anchor-header" :id="anchor">
-		<router-link :to="{name: locationName, hash: '#'+anchor}">#</router-link>
+		<router-link :to="{name: this.$route.name, hash: '#'+anchor}">#</router-link>
         <slot></slot>
 	</h2>
 </template>
@@ -12,10 +12,6 @@
                 type: String,
                 required: true,
             },
-            locationName:{
-                type: String,
-                required: true,
-            }
         }
     }
 </script>

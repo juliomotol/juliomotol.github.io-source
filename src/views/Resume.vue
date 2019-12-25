@@ -5,9 +5,11 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+	import Page from '../components/Page';
+
+	export default {
+        extends: Page,
+	}
 </script>
 
 <style lang="scss">

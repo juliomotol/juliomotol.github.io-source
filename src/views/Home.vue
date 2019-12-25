@@ -13,6 +13,14 @@
 	</div>
 </template>
 
+<script>
+	import Page from '../components/Page';
+
+	export default {
+        extends: Page,
+	}
+</script>
+
 <style lang="scss">
 	.home{
         min-height: calc(100vh - 54px - 40px);

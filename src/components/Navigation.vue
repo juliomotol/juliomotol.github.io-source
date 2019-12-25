@@ -7,23 +7,23 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-end">
-                <router-link :to="{name: 'about'}" class="navbar-item" active-class="is-active">
+                <router-link :to="{name: 'about'}" class="navbar-item">
                     about
                 </router-link>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <router-link :to="{name: 'works'}" class="navbar-item" active-class="is-active">
+                    <router-link :to="{name: 'works'}" class="navbar-item">
                         works
                     </router-link>
                     <div class="navbar-dropdown is-boxed">
-                        <router-link :to="{name: 'works-category', params: {category: 'projects'}}" class="navbar-item" active-class="is-active">
+                        <router-link :to="{name: 'works-category', params: {category: 'projects'}}" class="navbar-item">
                             projects
                         </router-link>
-                        <router-link :to="{name: 'works-category', params: {category: 'designs'}}" class="navbar-item" active-class="is-active">
+                        <router-link :to="{name: 'works-category', params: {category: 'designs'}}" class="navbar-item">
                             designs
                         </router-link>
                     </div>
                 </div>
-                <router-link :to="{name: 'contact'}" class="navbar-item" active-class="is-active">
+                <router-link :to="{name: 'contact'}" class="navbar-item">
                     contact
                 </router-link>
                 <div class="navbar-item">

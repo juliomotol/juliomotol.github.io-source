@@ -3,11 +3,11 @@
 		<h1 class="title is-1">
 			Some things about me
 		</h1>
-		<Anchorheader locationName="about" anchor="intro">
+		<Anchorheader anchor="intro">
 			A Short Narration
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clitakasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetursadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
-		<Anchorheader locationName="about" anchor="skills">
+		<Anchorheader anchor="skills">
 			Technical Skills
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -27,7 +27,7 @@
 			<span class="tag is-primary is-medium">Adobe Illstrator</span>
 			<span class="tag is-primary is-medium">Adobe XD</span>
 		</div>
-		<Anchorheader locationName="about" anchor="skills">
+		<Anchorheader anchor="skills">
 			Hobbies &amp; Interests 
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -49,8 +49,10 @@
 
 <script>
 	import Anchorheader from '../components/AnchorHeader';
+	import Page from '../components/Page';
 
 	export default {
+        extends: Page,
 		components:{
 			Anchorheader
 		}

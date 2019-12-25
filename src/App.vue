@@ -1,24 +1,32 @@
 <template>
-	<Container>
-		<Navigation/>
-		<ContentWrapper/>
-		<Footer/>
-	</Container>
+	<section class="columns is-gapless jm">
+        <section :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
+			<Navigation/>
+			<section class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></section>
+			<ContentWrapper/>
+			<Footer/>
+        </section>
+    </section>
 </template>
 
 <script>
-	import Container from './components/Container';
+	import { mapState } from 'vuex';
+	
 	import ContentWrapper from './components/ContentWrapper';
 	import Footer from './components/Footer';
 	import Navigation from './components/Navigation';
 
 	export default {
 		components: {
-			Container,
 			ContentWrapper,
 			Footer,
 			Navigation,
 		},
+        computed:{
+            ...mapState({
+                isFullPage: state => state.isFullPage,
+            })
+        }
 	}
 </script>
 
@@ -54,7 +62,6 @@
 	// @import "bulma/sass/components/menu.sass";
 	// @import "bulma/sass/components/message.sass";
 	// @import "bulma/sass/components/modal.sass";
-	// @import "bulma/sass/components/navbar.sass";
 	// @import "bulma/sass/components/pagination.sass";
 	// @import "bulma/sass/components/panel.sass";
 	// @import "bulma/sass/components/tabs.sass";
@@ -77,4 +84,21 @@
 
 	// Grid
 	// @import "bulma/sass/grid/tiles.sass";
+
+	.jm{
+		margin: 0 !important;
+
+		&__mobile-spacer{
+			height: calc(100vw - 54px);
+		}
+        &__container{
+            transition: width 0.5s ease;
+            border-radius: 0 0 32px 0;
+			overflow: hidden;
+			
+			@include from($tablet){
+				height: 100vh;
+			}
+        }
+    }
 </style>

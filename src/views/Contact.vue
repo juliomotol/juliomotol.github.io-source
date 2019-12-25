@@ -3,7 +3,7 @@
 		<h1 class="title is-1">
 			Get in touch
 		</h1>
-		<Anchorheader locationName="about" anchor="intro">
+		<Anchorheader anchor="socail_accounts">
 			Social Accounts
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -25,7 +25,7 @@
                 <span>Mail</span>
             </a>
 		</div>
-		<Anchorheader locationName="about" anchor="skills">
+		<Anchorheader anchor="send_a_message">
 			Send a Message
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -70,7 +70,7 @@
                 </div>
             </section>
         </section>
-		<Anchorheader locationName="about" anchor="skills">
+		<Anchorheader anchor="skills">
 			Resume 
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
@@ -82,8 +82,10 @@
 
 <script>
 	import Anchorheader from '../components/AnchorHeader';
+	import Page from '../components/Page';
 
 	export default {
+        extends: Page,
 		components:{
 			Anchorheader
 		}

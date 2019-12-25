@@ -23,11 +23,17 @@ const routes = [
 	{
 		path: '/works/:category',
 		name: 'works-category',
+		props: {
+			isFullPage: true,
+		},
 		component: () => import(/* webpackChunkName: "works" */ '../views/WorksCategory.vue')
 	},
 	{
 		path: '/works/:category/:slug',
 		name: 'works-article',
+		props: {
+			isFullPage: true,
+		},
 		component: () => import(/* webpackChunkName: "works" */ '../views/WorksArticle.vue')
 	},
 	{
@@ -38,13 +44,17 @@ const routes = [
 	{
 		path: '/contact/resume',
 		name: 'resume',
+		props: {
+			isFullPage: true,
+		},
 		component: () => import(/* webpackChunkName: "contact" */ '../views/Resume.vue')
 	},
 ]
 
 const router = new VueRouter({
 	base: process.env.BASE_URL,
-	routes
+	routes,
+	linkActiveClass: 'is-active',
 })
 
 export default router
