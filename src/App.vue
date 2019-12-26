@@ -1,8 +1,9 @@
 <template>
-	<section class="columns is-gapless jm">
-        <section :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
+	<div class="columns is-gapless jm" ref="app">
+		<DynamicBackground/>
+        <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
 			<Navigation/>
-			<section class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></section>
+			<div class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></div>
 			<OverlayScrollbars class="jm__content-wrapper" :options="{ 
 				className: isDarkMode ? 'os-theme-light' : 'os-theme-dark', 
 				overflowBehavior: { x: 'hidden' } 
@@ -12,8 +13,8 @@
 				</transition>
 			</OverlayScrollbars>
 			<Footer/>
-        </section>
-    </section>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -22,12 +23,14 @@
 	
 	import Footer from './components/Footer';
 	import Navigation from './components/Navigation';
+	import DynamicBackground from './components/DynamicBackground';
 
 	export default {
 		components: {
 			Footer,
 			Navigation,
-            OverlayScrollbars,
+			OverlayScrollbars,
+			DynamicBackground,
 		},
         computed:{
             ...mapState({
@@ -39,7 +42,7 @@
 			this.initTheme();
 		},
 		methods: {
-            ...mapActions('preferences', ['initTheme'])
+            ...mapActions('preferences', ['initTheme']),
 		}
 	}
 </script>
@@ -59,6 +62,7 @@
 	$family-primary: 'Roboto Slab';
 	$family-secondary: 'Open Sans';
 
+    @import 'bulma/sass/base/minireset.sass';
 	@import './scss/bulma-customizations/all';
 	@import './scss/utilities/mixins';
 
@@ -90,11 +94,12 @@
 			height: calc(100vw - 54px);
 		}
         &__container{
+			z-index: 1;
             transition: width 0.5s ease;
             border-radius: 0 0 32px 0;
 			overflow: hidden;
 			
-			@include from($tablet){
+			@include tablet{
 				height: 100vh;
 			}
 		}
@@ -112,7 +117,7 @@
 					padding: 32px;
 				}
 			}
-			@include from($tablet) {
+			@include tablet {
 				height: calc(100vh - 54px - 40px);
 				min-height: calc(100vh - 54px - 40px);
 

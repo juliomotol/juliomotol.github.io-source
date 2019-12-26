@@ -93,8 +93,7 @@
 </script>
 
 <style lang="scss">
-	@import '../scss/utilities/mixins';
-	@import '../scss/utilities/variables';
+	@import '../scss/utilities/all';
 
     $button-fb-background-color: #3B5998;
     $button-instagram-background-color: #FEDA77, #F58529, #DD2A7B, #8134AF, #515BD4;

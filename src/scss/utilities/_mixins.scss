@@ -1,3 +1,5 @@
+@import 'bulma/sass/utilities/mixins.sass';
+
 @mixin darkTheme {
     @media (prefers-color-scheme: dark) {
         @content;

@@ -6,7 +6,9 @@ $family-primary: 'Roboto Slab';
 $family-secondary: 'Open Sans';
 
 @import './scss/bulma-customizations/utilities/all';
-@import 'bulma/sass/base/_all.sass';
+
+@import 'bulma/sass/base/generic.sass';
+@import 'bulma/sass/base/helpers.sass';
 
 @import './scss/bulma-customizations/components/navbar';
 
