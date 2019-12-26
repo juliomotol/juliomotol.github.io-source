@@ -16,7 +16,7 @@
 // @import "bulma-prefers-dark/sass/components/menu.sass";
 // @import "bulma-prefers-dark/sass/components/message.sass";
 // @import "bulma-prefers-dark/sass/components/modal.sass";
-// @import "bulma-prefers-dark/sass/components/navbar.sass";
+@import "./components/navbar";
 // @import "bulma-prefers-dark/sass/components/pagination.sass";
 // @import "bulma-prefers-dark/sass/components/panel.sass";
 // @import "bulma-prefers-dark/sass/components/tabs.sass";
@@ -25,12 +25,12 @@
 // @import "bulma-prefers-dark/sass/elements/box.sass";
 @import 'bulma-prefers-dark/sass/elements/button.sass';
 @import 'bulma-prefers-dark/sass/elements/content.sass';
-@import 'bulma-prefers-dark/sass/elements/form.sass';
+@import './elements/form';
 // @import "bulma-prefers-dark/sass/elements/notification.sass";
 // @import "bulma-prefers-dark/sass/elements/progress.sass";
 // @import "bulma-prefers-dark/sass/elements/table.sass";
 @import 'bulma-prefers-dark/sass/elements/tag.sass';
-@import 'bulma-prefers-dark/sass/elements/title.sass';
+@import './elements/title';
 // @import "bulma-prefers-dark/sass/elements/other.sass";
 
 // Layout

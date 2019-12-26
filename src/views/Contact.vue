@@ -93,6 +93,9 @@
 </script>
 
 <style lang="scss">
+	@import '../scss/utilities/mixins';
+	@import '../scss/utilities/variables';
+
     $button-fb-background-color: #3B5998;
     $button-instagram-background-color: #FEDA77, #F58529, #DD2A7B, #8134AF, #515BD4;
     $button-instagram-background-color-hover: null;
@@ -125,5 +128,56 @@
                 background-color: darken($button-github-background-color, 2.5%)
             }
         }
+
+        @include darkTheme {
+            .is-fb{
+                background-color: $button-fb-background-color;
+
+                &:hover{
+                    background-color: darken($button-fb-background-color, 2.5%)
+                }
+            }
+            .is-instragram{
+                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color);
+                border: none;
+                
+                &:hover{
+                    background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover);
+                }
+            }
+            .is-github{
+                background-color: $button-github-background-color;
+                border-color: $border-dark;
+                
+                &:hover{
+                    background-color: darken($button-github-background-color, 2.5%)
+                }
+            }
+        }
+        @include lightTheme {
+            .is-fb{
+                background-color: $button-fb-background-color;
+
+                &:hover{
+                    background-color: darken($button-fb-background-color, 2.5%)
+                }
+            }
+            .is-instragram{
+                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color);
+                border: none;
+                
+                &:hover{
+                    background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover);
+                }
+            }
+            .is-github{
+                background-color: $button-github-background-color;
+                
+                &:hover{
+                    background-color: darken($button-github-background-color, 2.5%)
+                }
+            }
+        }
     }
+
 </style>

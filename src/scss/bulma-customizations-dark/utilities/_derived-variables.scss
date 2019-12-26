@@ -32,15 +32,15 @@ $dark: $grey-darker;
 // $background: $white-ter;
 // $background-dark: $black-ter;
 
-$border-dark: $grey-darker;
-$border-hover-dark: $grey-dark;
+$border-dark:               $grey-light;
+$border-hover-dark:         $grey-dark;
 
 // Text colors
-$text-dark: $grey-light;
+$text-dark: $grey-lightest;
 // $text-invert: findColorInvert($text);
 $text-invert-dark: findColorInvert($text-dark);
 // $text-light: $grey;
-$text-strong-dark: $grey-lighter;
+$text-strong-dark: $white-ter;
 
 // Code colors
 // $code-dark: darken($red, 15%);

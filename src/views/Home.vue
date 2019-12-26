@@ -1,7 +1,8 @@
 <template>
 	<div class="home">
 		<div class="home__content">
-			<img src="../assets/logo_banner.svg" alt="logo_banner">
+			<img src="../assets/logo_banner_light.svg" alt="logo_banner" v-if="isDarkMode">
+			<img src="../assets/logo_banner.svg" alt="logo_banner" v-else>
 			<h1 class="title is-1">
 				Full Stack Developer
 			</h1>
@@ -14,10 +15,16 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex';
 	import Page from '../components/Page';
 
 	export default {
         extends: Page,
+        computed: {
+            ...mapState({
+                isDarkMode: state => state.preferences.isDarkMode,
+            })
+        },
 	}
 </script>
 

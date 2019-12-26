@@ -62,8 +62,6 @@ $content-figure-margin: 24px;
         margin-top: $content-list-item-spacing;
     }
     p, dl, ol, ul, blockquote, pre, table{
-        font-family: $family-secondary;
-
         &:not(:last-child){
             margin-bottom: $content-element-spacing;
         }

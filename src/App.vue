@@ -3,7 +3,10 @@
         <section :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
 			<Navigation/>
 			<section class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></section>
-			<OverlayScrollbars class="jm__content-wrapper" :options="{ overflowBehavior: { x: 'hidden' } }" ref="overlayScrollbar">
+			<OverlayScrollbars class="jm__content-wrapper" :options="{ 
+				className: isDarkMode ? 'os-theme-light' : 'os-theme-dark', 
+				overflowBehavior: { x: 'hidden' } 
+			}" ref="overlayScrollbar">
 				<transition mode="out-in" name="fade-out-slide-in">
 					<router-view class="page"/>
 				</transition>
@@ -29,6 +32,7 @@
         computed:{
             ...mapState({
                 isFullPage: state => state.isFullPage,
+                isDarkMode: state => state.preferences.isDarkMode,
             })
 		},
 		mounted() {
@@ -41,11 +45,6 @@
 </script>
 
 <style lang="scss">
-	@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap");
-
-	$family-sans-serif: "Open Sans";
-	$family-primary: 'Roboto Slab';
-	$family-secondary: 'Open Sans';
 	$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 	@import "@fortawesome/fontawesome-free";
@@ -54,7 +53,14 @@
 	@import "@fortawesome/fontawesome-free/scss/solid.scss";
 	@import '~overlayscrollbars/css/OverlayScrollbars.css';
 
+	@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap");
+
+	$family-sans-serif: "Open Sans";
+	$family-primary: 'Roboto Slab';
+	$family-secondary: 'Open Sans';
+
 	@import './scss/bulma-customizations/all';
+	@import './scss/utilities/mixins';
 
 	@media (prefers-color-scheme: dark) {
 		@import './scss/bulma-customizations-dark/all';
@@ -95,6 +101,12 @@
 		&__content-wrapper {
 			background: linear-gradient($scheme-main, $scheme-main-ter);
 
+			@include darkTheme {
+				background: linear-gradient($scheme-invert, $scheme-invert-ter);
+			}
+			@include lightTheme {
+				background: linear-gradient($scheme-main, $scheme-main-ter);
+			}
 			@include touch() {
 				.page {
 					padding: 32px;
@@ -117,11 +129,25 @@
 				}
 				&:before {
 					top: 0;
-					background: linear-gradient($white, transparent);
+					background: linear-gradient($scheme-main, transparent);
+
+					@include darkTheme {
+						background: linear-gradient($scheme-invert, transparent);
+					}
+					@include lightTheme {
+						background: linear-gradient($scheme-main, transparent);
+					}
 				}
 				&:after {
 					bottom: 0;
-					background: linear-gradient(transparent, $white-ter);
+					background: linear-gradient(transparent, $scheme-main-ter);
+
+					@include darkTheme {
+						background: linear-gradient(transparent, $scheme-invert-ter);
+					}
+					@include lightTheme {
+						background: linear-gradient(transparent, $scheme-main-ter);
+					}
 				}
 				.os-scrollbar {
 					z-index: 3;
