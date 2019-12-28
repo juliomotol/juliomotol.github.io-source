@@ -32,40 +32,40 @@
         <section class="columns is-multiline is-variable is-2">
             <section class="column is-half">
                 <div class="field">
-                    <label class="label">Name</label>
+                    <label class="label" for="name">Name</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="John Doe">
+                        <input class="input" id="name" name="name" type="text" placeholder="John Doe">
                     </div>
                 </div>
             </section>
             <section class="column is-half">
                 <div class="field">
-                    <label class="label">Name</label>
+                    <label class="label" for="email">Email</label>
                     <div class="control">
-                        <input class="input" type="email" placeholder="johndoe@mail.com">
+                        <input class="input" id="email" name="email" type="email" placeholder="johndoe@mail.com">
                     </div>
                 </div>
             </section>
             <section class="column is-full">
                 <div class="field">
-                    <label class="label">Subject</label>
+                    <label class="label" for="subject">Subject</label>
                     <div class="control">
-                        <input class="input" type="text">
+                        <input class="input" id="subject" name="subject" type="text">
                     </div>
                 </div>
             </section>
             <section class="column is-full">
                 <div class="field">
-                    <label class="label">Message</label>
+                    <label class="label" for="message">Message</label>
                     <div class="control">
-                        <textarea class="textarea"></textarea>
+                        <textarea class="textarea" id="message" name="message"></textarea>
                     </div>
                 </div>
             </section>
             <section class="column is-full">
                 <div class="field">
                     <div class="control">
-                        <button class="button is-link">Send Message</button>
+                        <button class="button is-primary">Send Message</button>
                     </div>
                 </div>
             </section>
@@ -106,75 +106,28 @@
 
     .contact{
         .is-fb{
-            background-color: $button-fb-background-color;
+            background-color: $button-fb-background-color !important;
 
             &:hover{
-                background-color: darken($button-fb-background-color, 2.5%)
+                background-color: darken($button-fb-background-color, 2.5%) !important;
             }
         }
         .is-instragram{
-            background-image: radial-gradient(circle at bottom left, $button-instagram-background-color);
-            border: none;
+            background-image: radial-gradient(circle at bottom left, $button-instagram-background-color) !important;
+            border: none !important;
             
             &:hover{
-                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover);
+                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover) !important;
             }
         }
         .is-github{
-            background-color: $button-github-background-color;
+            background-color: $button-github-background-color !important;
             
-            &:hover{
-                background-color: darken($button-github-background-color, 2.5%)
-            }
-        }
-
-        @include darkTheme {
-            .is-fb{
-                background-color: $button-fb-background-color;
-
-                &:hover{
-                    background-color: darken($button-fb-background-color, 2.5%)
-                }
-            }
-            .is-instragram{
-                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color);
-                border: none;
-                
-                &:hover{
-                    background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover);
-                }
-            }
-            .is-github{
-                background-color: $button-github-background-color;
+            @include darkTheme {
                 border-color: $border-dark;
-                
-                &:hover{
-                    background-color: darken($button-github-background-color, 2.5%)
-                }
             }
-        }
-        @include lightTheme {
-            .is-fb{
-                background-color: $button-fb-background-color;
-
-                &:hover{
-                    background-color: darken($button-fb-background-color, 2.5%)
-                }
-            }
-            .is-instragram{
-                background-image: radial-gradient(circle at bottom left, $button-instagram-background-color);
-                border: none;
-                
-                &:hover{
-                    background-image: radial-gradient(circle at bottom left, $button-instagram-background-color-hover);
-                }
-            }
-            .is-github{
-                background-color: $button-github-background-color;
-                
-                &:hover{
-                    background-color: darken($button-github-background-color, 2.5%)
-                }
+            &:hover{
+                background-color: darken($button-github-background-color, 2.5%) !important;
             }
         }
     }

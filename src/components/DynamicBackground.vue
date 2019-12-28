@@ -45,18 +45,21 @@
 
     .jm-background{
         &__image{
+            user-drag: none; 
+            -webkit-user-drag: none;
+            user-select: none;
             position: absolute;
             display: block;
             object-fit: cover;
             
             @include mobile(){
-                height: calc(100vw + 2px);
+                height: calc(100vw + 2px) !important;
                 top: 0;
                 left: 0; 
                 right: 0;
             }
             @include tablet{
-                height: 100vh;
+                height: 100vh !important;
                 right: -12vh;
                 top: 0;
                 bottom: 0;
@@ -67,32 +70,6 @@
                     
                 &.is-active{
                     opacity: 1;
-                }
-            }
-            @include lightTheme {
-                position: absolute;
-                display: block;
-                object-fit: cover;
-                
-                @include mobile(){
-                    height: calc(100vw + 2px);
-                    top: 0;
-                    left: 0; 
-                    right: 0;
-                }
-                @include tablet{
-                    height: 100vh;
-                    right: -12vh;
-                    top: 0;
-                    bottom: 0;
-                }
-                &.is-temp{
-                    opacity: 0;
-                    transition: opacity 0.25s ease-out;
-                        
-                    &.is-active{
-                        opacity: 1;
-                    }
                 }
             }
         }

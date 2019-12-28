@@ -17,11 +17,11 @@
                 <router-link :to="{name: 'contact'}" class="navbar-item">
                     contact
                 </router-link>
-                <a href="#" class="navbar-item" @click="toggleDarkMode">
-                    <span class="icon">
+                <div class="navbar-item">
+                    <span class="icon darkmode-toggle" @click="toggleDarkMode">
                         <i :class="[(isDarkMode ? 'far' : 'fas'), 'fa-moon']"></i>
                     </span>
-                </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,6 +46,10 @@
     @import "../scss/bulma-customizations/utilities/all";
     
     .navbar{
-        font-family: $family-secondary
+        font-family: $family-secondary;
+
+        .darkmode-toggle{
+            cursor: pointer;
+        }
     }
 </style>
