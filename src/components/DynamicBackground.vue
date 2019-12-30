@@ -1,7 +1,15 @@
 <template>
     <div class="jm-background">
-		<img class="jm-background__image" :src="oldUrl" alt="" v-show="isLoading">
-        <img :class="['jm-background__image is-temp', (isLoaded ? 'is-active' : '')]" :src="currentUrl" alt="" ref="imageOverlay">
+		<img class="jm-background__image"
+             :src="oldUrl"
+             alt="background"
+             :style="backgroundStyles"
+             ref="imageBackgroundFallback">
+        <img :class="['jm-background__image is-preview', (isLoaded ? 'is-active' : '')]"
+             :src="currentUrl"
+             alt="background"
+             :style="backgroundStyles"
+             ref="imageBackground">
 	</div>
 </template>
 
@@ -9,20 +17,22 @@
     export default {
 		data(){
 			return {
-                isLoading: false,
                 isLoaded: false,
                 backgroundIncrements: 0,
                 oldUrl: '',
+                backgroundOffset: 0,
 			};
         },
         computed: {
             currentUrl() {
                 return 'https://source.unsplash.com/user/juliomotol?load='+this.backgroundIncrements;
+            },
+            backgroundStyles(){
+                return {right: this.backgroundOffset + 'px'};
             }
         },
 		watch: {
             currentUrl(newVal, oldVal) {
-                this.isLoading = true;
                 this.isLoaded = false;
                 this.oldUrl = oldVal;
             },
@@ -31,10 +41,9 @@
 			}
         },
         mounted(){
-            this.$refs.imageOverlay.addEventListener('load', () => {
+            this.$refs.imageBackground.addEventListener('load', () => {
                 this.isLoaded = true;
-
-                setTimeout(() => this.isLoading = false, 1000);
+                this.backgroundOffset = (this.$refs.imageBackground.width - this.$refs.imageBackground.height) / -2;
             });
         }
     }
@@ -56,15 +65,15 @@
                 height: calc(100vw + 2px) !important;
                 top: 0;
                 left: 0; 
-                right: 0;
+                right: 0 !important;
             }
             @include tablet{
                 height: 100vh !important;
-                right: -12vh;
+                // right: -12vh;
                 top: 0;
                 bottom: 0;
             }
-            &.is-temp{
+            &.is-preview{
                 opacity: 0;
                 transition: opacity 0.25s ease-out;
                     
