@@ -8,11 +8,6 @@
 				default: false
 			}
 		},
-		data() {
-			return {
-				test: ''
-			};
-		},
 		mounted() {
 			this.toggleFullPage(this.isFullPage);
 		},

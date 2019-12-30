@@ -8,68 +8,114 @@
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
 		<div class="buttons">
-			<a class="button is-primary is-fb">
+			<a class="button is-primary is-fb" href="https://www.facebook.com/juliomotol89">
                 <span class="icon"><i class="fab fa-facebook-square"></i></span>
                 <span>Facebook</span>
             </a>
-			<a class="button is-primary is-instragram">
+			<a class="button is-primary is-instragram" href="https://www.instagram.com/julio.motol/">
                 <span class="icon"><i class="fab fa-instagram"></i></span>
                 <span>Instagram</span>
             </a>
-			<a class="button is-primary is-github">
+			<a class="button is-primary is-github" href="https://github.com/juliomotol">
                 <span class="icon"><i class="fab fa-github-square"></i></span>
                 <span>GitHub</span>
             </a>
-			<a class="button is-primary">
-                <span class="icon"><i class="fas fa-envelope"></i></span>
-                <span>Mail</span>
+			<a class="button is-primary" href="https://stackoverflow.com/users/4672917/julio-motol">
+                <span class="icon"><i class="fab fa-stack-overflow"></i></span>
+                <span>Stack Overflow</span>
             </a>
 		</div>
 		<Anchorheader anchor="send_a_message">
 			Send a Message
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
-        <section class="columns is-multiline is-variable is-2">
-            <section class="column is-half">
+        <ValidationObserver tag="form" class="columns is-multiline is-variable is-2" @submit.prevent="sendMessage" ref="inquiryForm">
+            <div class="column is-half">
                 <div class="field">
                     <label class="label" for="name">Name</label>
-                    <div class="control">
-                        <input class="input" id="name" name="name" type="text" placeholder="John Doe">
-                    </div>
+                    <ValidationProvider v-slot="{errors, failed}" 
+                                        name="Name" 
+                                        rules="required" 
+                                        tag="div" 
+                                        class="control">
+                        <input :class="['input', (failed ? 'is-danger' : '')]"
+                               v-model="inquiryForm.name"
+                               id="name"
+                               type="text"
+                               placeholder="John Doe"
+                               :disabled="inquiryForm.isLoading">
+                        <p :class="['help', (failed ? 'is-danger' : '')]">
+                            {{ errors[0] || '' }}
+                        </p>
+                    </ValidationProvider>
                 </div>
-            </section>
-            <section class="column is-half">
+            </div>
+            <div class="column is-half">
                 <div class="field">
                     <label class="label" for="email">Email</label>
-                    <div class="control">
-                        <input class="input" id="email" name="email" type="email" placeholder="johndoe@mail.com">
-                    </div>
+                    <ValidationProvider v-slot="{errors, failed}" 
+                                        name="Email" 
+                                        rules="required|email" 
+                                        tag="div" 
+                                        class="control">
+                        <input :class="['input', (failed ? 'is-danger' : '')]"
+                               v-model="inquiryForm.email"
+                               id="email"
+                               type="email"
+                               placeholder="johndoe@mail.com"
+                               :disabled="inquiryForm.isLoading">
+                        <p :class="['help', (failed ? 'is-danger' : '')]">
+                            {{ errors[0] || '' }}
+                        </p>
+                    </ValidationProvider>
                 </div>
-            </section>
-            <section class="column is-full">
+            </div>
+            <div class="column is-full">
                 <div class="field">
                     <label class="label" for="subject">Subject</label>
-                    <div class="control">
-                        <input class="input" id="subject" name="subject" type="text">
-                    </div>
+                    <ValidationProvider v-slot="{errors, failed}" 
+                                        name="Subject" 
+                                        rules="required" 
+                                        tag="div" 
+                                        class="control">
+                        <input :class="['input', (failed ? 'is-danger' : '')]"
+                               v-model="inquiryForm.subject"
+                               id="subject"
+                               type="text"
+                               :disabled="inquiryForm.isLoading">
+                        <p :class="['help', (failed ? 'is-danger' : '')]">
+                            {{ errors[0] || '' }}
+                        </p>
+                    </ValidationProvider>
                 </div>
-            </section>
-            <section class="column is-full">
                 <div class="field">
                     <label class="label" for="message">Message</label>
-                    <div class="control">
-                        <textarea class="textarea" id="message" name="message"></textarea>
-                    </div>
+                    <ValidationProvider v-slot="{errors, failed}"
+                                        name="Message"
+                                        rules="required"
+                                        tag="div"
+                                        class="control">
+                        <textarea :class="['textarea', (failed ? 'is-danger' : '')]"
+                               v-model="inquiryForm.message"
+                               id="message"
+                               :disabled="inquiryForm.isLoading">
+                        </textarea>
+                        <p :class="['help', (failed ? 'is-danger' : '')]">
+                            {{ errors[0] || '' }}
+                        </p>
+                    </ValidationProvider>
                 </div>
-            </section>
-            <section class="column is-full">
                 <div class="field">
                     <div class="control">
-                        <button class="button is-primary">Send Message</button>
+                        <button :class="['button', 'is-primary', (inquiryForm.isLoading? 'is-loading' : '')]" 
+                                :disabled="inquiryForm.isLoading">
+                            Send Message
+                        </button>
                     </div>
                 </div>
-            </section>
-        </section>
+                <p>For further inquiries, email them to <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.</p>
+            </div>
+        </ValidationObserver>
 		<Anchorheader anchor="resume">
 			Resume 
 		</Anchorheader>
@@ -82,13 +128,69 @@
 
 <script>
 	import Anchorheader from '../components/AnchorHeader';
-	import Page from '../components/Page';
+    import Page from '../components/Page';
+
+    import { ValidationObserver, ValidationProvider } from 'vee-validate';
+    import { mapActions } from 'vuex';
+    import Firestore from '../utilities/Firestore';
+    import firebase from 'firebase/app';
 
 	export default {
         extends: Page,
-		components:{
-			Anchorheader
-		}
+		components: {
+            Anchorheader,
+            ValidationObserver,
+            ValidationProvider,
+        },
+        data(){
+            return {
+                inquiryForm: {
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: '',
+                    isLoading: false,
+                },
+            }
+        },
+        methods: {
+            sendMessage(){
+                this.$refs.inquiryForm.validate().then((valid)=>{
+                    if(valid){
+                        this.inquiryForm.isLoading = true;
+
+                        Firestore.collection('inquiries').add({
+                            name:       this.inquiryForm.name,
+                            email:      this.inquiryForm.email,
+                            subject:    this.inquiryForm.subject,
+                            message:    this.inquiryForm.message,
+                            isRead:     false,
+                            createdAt:  firebase.firestore.FieldValue.serverTimestamp(),
+                        }).catch(()=>{
+                            this.showAlert({
+                                theme: 'danger',
+                                title: "Opps...",
+                                message: "This wasn't supposed to happen. Try again or if the error persists, <a href='https://github.com/juliomotol/juliomotol.github.io-source/issues'>submit an issue</a>.",
+                            });
+                        }).then(() => {
+                            this.inquiryForm.name = '';
+                            this.inquiryForm.email = '';
+                            this.inquiryForm.subject = '';
+                            this.inquiryForm.message = '';
+                            this.inquiryForm.isLoading = false;
+                            this.$refs.inquiryForm.reset();
+
+                            this.showAlert({
+                                theme: 'success',
+                                title: "Message Sent!",
+                                message: "I'll get back to you as soon as I can.",
+                            });
+                        });
+                    }
+                })
+            },
+            ...mapActions('alert', {showAlert: 'show'}),
+        }
 	}
 </script>
 

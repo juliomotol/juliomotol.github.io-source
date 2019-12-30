@@ -15,14 +15,14 @@
 // @import "bulma-prefers-dark/sass/components/media.sass";
 // @import "bulma-prefers-dark/sass/components/menu.sass";
 // @import "bulma-prefers-dark/sass/components/message.sass";
-// @import "bulma-prefers-dark/sass/components/modal.sass";
+@import "./components/modal";
 @import "./components/navbar";
 // @import "bulma-prefers-dark/sass/components/pagination.sass";
 // @import "bulma-prefers-dark/sass/components/panel.sass";
 // @import "bulma-prefers-dark/sass/components/tabs.sass";
 
 // Elements
-// @import "bulma-prefers-dark/sass/elements/box.sass";
+@import "./elements/box";
 @import 'bulma-prefers-dark/sass/elements/button.sass';
 @import 'bulma-prefers-dark/sass/elements/content.sass';
 @import './elements/form';

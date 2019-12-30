@@ -1,5 +1,6 @@
 <template>
 	<div class="columns is-gapless jm" ref="app">
+		<Alert ref="alert"/>
 		<DynamicBackground/>
         <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
 			<Navigation/>
@@ -21,16 +22,18 @@
 	import { mapState, mapActions } from 'vuex';
     import { OverlayScrollbarsComponent as OverlayScrollbars} from 'overlayscrollbars-vue';
 	
+	import Alert from './components/Alert';
+	import DynamicBackground from './components/DynamicBackground';
 	import Footer from './components/Footer';
 	import Navigation from './components/Navigation';
-	import DynamicBackground from './components/DynamicBackground';
 
 	export default {
 		components: {
+			Alert,
+			DynamicBackground,
 			Footer,
 			Navigation,
 			OverlayScrollbars,
-			DynamicBackground,
 		},
         computed:{
             ...mapState({
@@ -69,6 +72,11 @@
 	@media (prefers-color-scheme: dark) {
 		@import './scss/bulma-customizations-dark/all';
 	}
+	html.dark-theme{
+		@import './scss/bulma-customizations-dark/all';
+
+		background-color: $body-background-dark;
+	}
 	html.light-theme{
 		@import './scss/bulma-customizations/all';
 
@@ -81,11 +89,6 @@
 		overflow-y: $body-overflow-y;
 		text-rendering: $body-rendering;
 		text-size-adjust: 100%;
-	}
-	html.dark-theme{
-		@import './scss/bulma-customizations-dark/all';
-
-		background-color: $body-background-dark;
 	}
 	.jm{
 		margin: 0 !important;

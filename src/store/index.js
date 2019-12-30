@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 
+import alert from './modules/alert';
 import preferences from './modules/preferences';
 
 Vue.use(Vuex);
@@ -15,7 +16,8 @@ export default new Vuex.Store({
 	},
 	actions: {},
 	modules: {
-		preferences
+		alert,
+		preferences,
 	},
 	plugins: [
 		createPersistedState({

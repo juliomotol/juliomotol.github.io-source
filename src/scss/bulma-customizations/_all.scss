@@ -5,24 +5,25 @@ $family-sans-serif: "Open Sans";
 $family-primary: 'Roboto Slab';
 $family-secondary: 'Open Sans';
 
-@import './scss/bulma-customizations/utilities/all';
+@import './utilities/all';
 
 @import 'bulma/sass/base/generic.sass';
 @import 'bulma/sass/base/helpers.sass';
 
-@import './scss/bulma-customizations/components/navbar';
+@import './components/navbar';
 
-@import './scss/bulma-customizations/elements/button';
-@import './scss/bulma-customizations/elements/content';
-@import './scss/bulma-customizations/elements/title';
+@import "./elements/box";
+@import './elements/button';
+@import './elements/content';
+@import './elements/title';
 
-@import './scss/bulma-customizations/form/shared';
-@import './scss/bulma-customizations/form/input-textarea';
-@import './scss/bulma-customizations/form/tools';
+@import './form/shared';
+@import './form/input-textarea';
+@import './form/tools';
 
-@import './scss/bulma-customizations/grid/columns';
+@import './grid/columns';
 
-@import './scss/bulma-customizations/layout/footer';
+@import './layout/footer';
 
 // Components
 // @import "bulma/sass/components/breadcrumb.sass";
@@ -33,13 +34,12 @@ $family-secondary: 'Open Sans';
 // @import "bulma/sass/components/media.sass";
 // @import "bulma/sass/components/menu.sass";
 // @import "bulma/sass/components/message.sass";
-// @import "bulma/sass/components/modal.sass";
+@import "bulma/sass/components/modal.sass";
 // @import "bulma/sass/components/pagination.sass";
 // @import "bulma/sass/components/panel.sass";
 // @import "bulma/sass/components/tabs.sass";
 
 // Elements
-// @import "bulma/sass/elements/box.sass";
 // @import "bulma/sass/elements/container.sass";
 @import 'bulma/sass/elements/icon.sass';
 // @import "bulma/sass/elements/image.sass";
