@@ -36,14 +36,14 @@ const routes = [
 		name: 'contact',
 		component: () => import(/* webpackChunkName: "contact" */ '../views/Contact.vue')
 	},
-	{
-		path: '/contact/resume',
-		name: 'resume',
-		props: {
-			isFullPage: true,
-		},
-		component: () => import(/* webpackChunkName: "contact" */ '../views/Resume.vue')
-	},
+	// {
+	// 	path: '/contact/resume',
+	// 	name: 'resume',
+	// 	props: {
+	// 		isFullPage: true,
+	// 	},
+	// 	component: () => import(/* webpackChunkName: "contact" */ '../views/Resume.vue')
+	// },
 ]
 
 const router = new VueRouter({

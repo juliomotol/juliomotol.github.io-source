@@ -116,13 +116,13 @@
                 <p>For further inquiries, email them to <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.</p>
             </div>
         </ValidationObserver>
-		<Anchorheader anchor="resume">
+		<!-- <Anchorheader anchor="resume">
 			Resume 
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
 		<div class="buttons">
 			<router-link :to="{name: 'resume'}" class="button is-primary">View Resume</router-link>
-		</div>
+		</div> -->
 	</div>
 </template>
 

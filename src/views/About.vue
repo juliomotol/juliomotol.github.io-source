@@ -42,7 +42,7 @@
 		</div>
 		<div class="buttons">
 			<router-link :to="{name: 'works'}" class="button is-primary">See what I can do</router-link>
-			<router-link :to="{name: 'resume'}" class="button is-primary is-outlined">View Resume</router-link>
+			<!-- <router-link :to="{name: 'resume'}" class="button is-primary is-outlined">View Resume</router-link> -->
 		</div>
 	</div>
 </template>
