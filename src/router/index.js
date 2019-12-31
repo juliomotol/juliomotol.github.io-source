@@ -26,9 +26,6 @@ const routes = [
 	{
 		path: '/works/:slug',
 		name: 'works-article',
-		props: {
-			isFullPage: true,
-		},
 		component: () => import(/* webpackChunkName: "works" */ '../views/WorksArticle.vue')
 	},
 	{

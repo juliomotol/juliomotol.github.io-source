@@ -115,18 +115,13 @@
 			@include lightTheme {
 				background: linear-gradient($scheme-main, $scheme-main-ter);
 			}
-			@include touch() {
-				.page {
-					padding: 32px;
-				}
+			@include mobile(){
+				min-height: calc(100vh - 100vw - 40px);
 			}
 			@include tablet {
 				height: calc(100vh - 54px - 40px);
 				min-height: calc(100vh - 54px - 40px);
 
-				.page {
-					padding: 32px 64px;
-				}
 				&:before,
 				&:after {
 					content: '';
@@ -159,6 +154,14 @@
 				}
 				.os-scrollbar {
 					z-index: 3;
+				}
+			}
+			.page {
+				@include mobile() {
+					padding: 32px;
+				}
+				@include tablet {
+					padding: 32px 64px;
 				}
 			}
 		}

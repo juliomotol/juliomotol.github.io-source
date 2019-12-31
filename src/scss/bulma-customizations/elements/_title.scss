@@ -9,7 +9,7 @@ $title-weight: $weight-normal;
 // $title-sup-size: 0.75em;
 
 // $subtitle-color: $text;
-// $subtitle-family: false;
+$subtitle-family: $family-secondary;
 // $subtitle-size: $size-5;
 // $subtitle-weight: $weight-normal;
 // $subtitle-line-height: 1.25;
@@ -18,3 +18,9 @@ $title-weight: $weight-normal;
 // $subtitle-negative-margin: -1.25rem;
 
 @import "bulma/sass/elements/title.sass";
+
+.title{
+    &.is-3, &.is-4, &.is-5, &.is-6, &.is-7{
+        font-weight: $weight-semibold;
+    }
+}

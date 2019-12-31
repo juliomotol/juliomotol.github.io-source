@@ -17,7 +17,7 @@ $content-table-head-cell-color: $text-strong;
 $content-table-foot-cell-border-width: 2px 0 0;
 $content-table-foot-cell-color: $text-strong;
 
-$content-element-spacing: 12px;
+$content-element-spacing: 24px;
 $content-list-item-spacing: 8px;
 $content-left-indent: 32px;
 
@@ -29,6 +29,7 @@ $content-figure-margin: 24px;
         font-weight: $content-heading-weight;
         line-height: $content-heading-line-height;
         margin-bottom: $content-element-spacing;
+        font-family: $family-secondary;
         
         &:not(:first-child){
             margin-top: $content-element-spacing;

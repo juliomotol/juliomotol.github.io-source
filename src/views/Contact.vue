@@ -8,19 +8,19 @@
 		</Anchorheader>
 		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
 		<div class="buttons">
-			<a class="button is-primary is-fb" href="https://www.facebook.com/juliomotol89">
+			<a class="button is-primary is-fb" href="https://www.facebook.com/juliomotol89" target="_blank" rel="noreferrer">
                 <span class="icon"><i class="fab fa-facebook-square"></i></span>
                 <span>Facebook</span>
             </a>
-			<a class="button is-primary is-instragram" href="https://www.instagram.com/julio.motol/">
+			<a class="button is-primary is-instragram" href="https://www.instagram.com/julio.motol/" target="_blank" rel="noreferrer">
                 <span class="icon"><i class="fab fa-instagram"></i></span>
                 <span>Instagram</span>
             </a>
-			<a class="button is-primary is-github" href="https://github.com/juliomotol">
+			<a class="button is-primary is-github" href="https://github.com/juliomotol" target="_blank" rel="noreferrer">
                 <span class="icon"><i class="fab fa-github-square"></i></span>
                 <span>GitHub</span>
             </a>
-			<a class="button is-primary" href="https://stackoverflow.com/users/4672917/julio-motol">
+			<a class="button is-primary" href="https://stackoverflow.com/users/4672917/julio-motol" target="_blank" rel="noreferrer">
                 <span class="icon"><i class="fab fa-stack-overflow"></i></span>
                 <span>Stack Overflow</span>
             </a>
@@ -113,7 +113,7 @@
                         </button>
                     </div>
                 </div>
-                <p>For further inquiries, email them to <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.</p>
+                <p>For further inquiries, email them to <a href="mailto:julio.motol89@gmail.com" target="_blank" rel="noreferrer">julio.motol89@gmail.com</a>.</p>
             </div>
         </ValidationObserver>
 		<!-- <Anchorheader anchor="resume">
@@ -170,7 +170,7 @@
                             this.showAlert({
                                 theme: 'danger',
                                 title: "Opps...",
-                                message: "This wasn't supposed to happen. Try again or if the error persists, <a href='https://github.com/juliomotol/juliomotol.github.io-source/issues'>submit an issue</a>.",
+                                message: "This wasn't supposed to happen. Try again or if the error persists, <a href='https://github.com/juliomotol/juliomotol.github.io-source/issues' target='_blank' rel='noreferrer'>submit an issue</a>.",
                             });
                         }).then(() => {
                             this.inquiryForm.name = '';
