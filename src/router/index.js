@@ -18,9 +18,6 @@ const routes = [
 	{
 		path: '/works',
 		name: 'works',
-		props: {
-			isFullPage: true,
-		},
 		component: () => import(/* webpackChunkName: "works" */ '../views/Works.vue')
 	},
 	{
@@ -36,9 +33,6 @@ const routes = [
 	// {
 	// 	path: '/contact/resume',
 	// 	name: 'resume',
-	// 	props: {
-	// 		isFullPage: true,
-	// 	},
 	// 	component: () => import(/* webpackChunkName: "contact" */ '../views/Resume.vue')
 	// },
 ]

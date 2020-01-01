@@ -8,16 +8,12 @@ import preferences from './modules/preferences';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	state: {
-		isFullPage: false
-	},
-	mutations: {
-		toggleFullPage: (state, value) => state.isFullPage = typeof value === 'boolean' ? value : !state.isFullPage,
-	},
+	state: {},
+	mutations: {},
 	actions: {},
 	modules: {
 		alert,
-		preferences,
+		preferences
 	},
 	plugins: [
 		createPersistedState({

@@ -1,18 +1,22 @@
 <script>
-	import { mapMutations } from 'vuex';
-
 	export default {
-		props: {
-			isFullPage: {
-				type: Boolean,
-				default: false
+		data(){
+			return {
+				backgroundImage: null,
+				isFullPage: false,
 			}
 		},
-		mounted() {
-			this.toggleFullPage(this.isFullPage);
+		watch: {
+			backgroundImage(newVal){
+				this.$emit('setBackground', newVal);
+			},
+			isFullPage(newVal){
+				this.$emit('toggleFullPage', newVal);
+			},
 		},
-		methods: {
-			...mapMutations(['toggleFullPage'])
-		}
+		mounted() {
+			this.$emit('setBackground', this.backgroundImage);
+			this.$emit('toggleFullPage', this.isFullPage);
+		},
 	};
 </script>

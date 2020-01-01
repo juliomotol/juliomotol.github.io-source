@@ -3,18 +3,21 @@
 		<img class="jm-background__image"
              :src="oldUrl"
              alt="background"
-             :style="backgroundStyles"
+             :style="{right: backgroundOffset + 'px'}"
              ref="imageBackgroundFallback">
         <img :class="['jm-background__image is-preview', (isLoaded ? 'is-active' : '')]"
              :src="currentUrl"
              alt="background"
-             :style="backgroundStyles"
+             :style="{right: backgroundOffset + 'px'}"
              ref="imageBackground">
 	</div>
 </template>
 
 <script>
     export default {
+        props: {
+            backgroundImage: String,
+        },
 		data(){
 			return {
                 isLoaded: false,
@@ -25,11 +28,8 @@
         },
         computed: {
             currentUrl() {
-                return 'https://source.unsplash.com/user/juliomotol?load='+this.backgroundIncrements;
+                return this.backgroundImage || 'https://source.unsplash.com/user/juliomotol?load='+this.backgroundIncrements;
             },
-            backgroundStyles(){
-                return {right: this.backgroundOffset + 'px'};
-            }
         },
 		watch: {
             currentUrl(newVal, oldVal) {

@@ -18,7 +18,7 @@ $content-table-foot-cell-border-width: 2px 0 0;
 $content-table-foot-cell-color: $text-strong;
 
 $content-element-spacing: 24px;
-$content-list-item-spacing: 8px;
+$content-list-item-spacing: 12px;
 $content-left-indent: 32px;
 
 $content-figure-margin: 24px; 
@@ -37,27 +37,23 @@ $content-figure-margin: 24px;
     }
     h1{
         font-size: $size-1;
-        margin-bottom: 24px;
         font-weight: $weight-normal;
-        
-        &:not(:first-child){
-            margin-top: 24px;
-        }
     }
     h2{
-        font-size: $size-3;
+        font-size: $size-2;
+        font-weight: $weight-normal;
     }
     h3{
-        font-size: $size-4;
+        font-size: $size-3;
     }
     h4{
-        font-size: $size-5;
+        font-size: $size-4;
     }
     h5{
-        font-size: $size-6;
+        font-size: $size-5;
     }
     h6{
-        font-size: $size-7;
+        font-size: $size-6;
     }
     li + li{
         margin-top: $content-list-item-spacing;

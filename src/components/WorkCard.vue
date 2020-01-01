@@ -6,8 +6,12 @@
             </figure>
         </div>
         <div class="card-content">
-            <p class="title is-3">{{ title }}</p>
-            <p class="subtitle is-5">{{ subtitle }}</p>
+            <p class="title is-2">{{ title }}</p>
+            <p class="subtitle is-5">
+                <time :datetime="date.toISOString()">
+                    {{ date.toDateString() }}
+                </time>
+            </p>
             <div class="tags">
                 <span v-for="(tag, index) in tags"
                       :key="index"
@@ -27,8 +31,8 @@
                 type: String,
                 required: true,
             },
-            subtitle: String,
             tags: Array,
+            date: Date,
         }
     }
 </script>

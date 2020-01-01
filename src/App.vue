@@ -1,7 +1,7 @@
 <template>
 	<div class="columns is-gapless jm" ref="app">
 		<Alert ref="alert"/>
-		<DynamicBackground/>
+		<DynamicBackground :backgroundImage="backgroundImage"/>
         <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
 			<Navigation/>
 			<div class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></div>
@@ -10,7 +10,9 @@
 				overflowBehavior: { x: 'hidden' } 
 			}" ref="overlayScrollbar">
 				<transition mode="out-in" name="fade-out-slide-in">
-					<router-view class="page"/>
+					<router-view class="page" 
+						@toggleFullPage="(value) => isFullPage = value"
+						@setBackground="(value) => backgroundImage = value"/>
 				</transition>
 			</OverlayScrollbars>
 			<Footer/>
@@ -35,9 +37,14 @@
 			Navigation,
 			OverlayScrollbars,
 		},
+		data(){
+			return {
+				isFullPage: false,
+				backgroundImage: null,
+			}
+		},
         computed:{
             ...mapState({
-                isFullPage: state => state.isFullPage,
                 isDarkMode: state => state.preferences.isDarkMode,
             })
 		},
@@ -81,14 +88,6 @@
 		@import './scss/bulma-customizations/all';
 
 		background-color: $body-background-color;
-		font-size: $body-size;
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		min-width: $body-min-width;
-		overflow-x: $body-overflow-x;
-		overflow-y: $body-overflow-y;
-		text-rendering: $body-rendering;
-		text-size-adjust: 100%;
 	}
 	.jm{
 		margin: 0 !important;

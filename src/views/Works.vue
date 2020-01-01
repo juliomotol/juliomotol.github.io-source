@@ -10,11 +10,11 @@
 			<div class="column is-one-third-tablet is-one-quarter-widescreen"
 				v-for="(workArticle, index) in workArticles" 
 				:key="index">
-				<router-link :to="{name: 'works-article', params: {slug: workArticle.slug}}">
+				<router-link :to="{name: 'works-article', params: {slug: workArticle.id}}">
 					<WorkCard :thumbnail="workArticle.thumbnail"
 							:title="workArticle.title"
-							:subtitle="workArticle.subtitle"
-							:tags="workArticle.tags"/>
+							:tags="workArticle.tags"
+							:date="workArticle.createdAt.toDate()"/>
 				</router-link>
 			</div>
 		</div>
@@ -50,6 +50,7 @@
 		},
 		data() {
 			return {
+				isFullPage: true,
 				workArticles:[],
 			}
 		},
