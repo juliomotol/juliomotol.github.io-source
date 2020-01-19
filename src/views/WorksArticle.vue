@@ -1,7 +1,7 @@
 <template>
 	<div class="work-article">
         <h1 class="title is-1">{{ workArticle.title }}</h1>
-        <h3 class="subtitle is-5">
+        <h3 class="subtitle is-6">
             <time :datetime="workArticle.createdAt.toDate().toISOString()">
                 {{ workArticle.createdAt.toDate().toDateString() }}
             </time>

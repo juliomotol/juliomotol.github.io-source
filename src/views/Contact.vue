@@ -6,7 +6,7 @@
 		<Anchorheader anchor="socail_accounts">
 			Social Accounts
 		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
+		<p>You can find in most social media site (though I may not be active in posting). Hit me up if you ever like it or follow me to keep in the touch with the following social media site.</p>
 		<div class="buttons">
 			<a class="button is-primary is-fb" href="https://www.facebook.com/juliomotol89" target="_blank" rel="noreferrer noopenner">
                 <span class="icon"><i class="fab fa-facebook-square"></i></span>
@@ -28,7 +28,7 @@
 		<Anchorheader anchor="send_a_message">
 			Send a Message
 		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
+		<p>Got a question, project needed to made or a lovely message that you want to send? Fill up the form below and I'll respond as soon as I can.</p>
         <ValidationObserver tag="form" class="columns is-multiline is-variable is-2" @submit.prevent="sendMessage" ref="inquiryForm">
             <div class="column is-half">
                 <div class="field">

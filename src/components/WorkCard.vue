@@ -7,7 +7,7 @@
         </div>
         <div class="card-content">
             <p class="title is-2">{{ title }}</p>
-            <p class="subtitle is-5">
+            <p class="subtitle is-6">
                 <time :datetime="date.toISOString()">
                     {{ date.toDateString() }}
                 </time>

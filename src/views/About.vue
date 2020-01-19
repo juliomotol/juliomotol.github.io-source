@@ -4,13 +4,15 @@
 			Some things about me
 		</h1>
 		<Anchorheader anchor="intro">
-			A Short Narration
+			A Short Bio
 		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clitakasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetursadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diamvoluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+		<p>I'm Julio, an aspiring full-stack developer from the Philippines. Had a rough childhood but is now making the best out of what life can offer. I studied at the Far Eastern University - Makati where I finished BS Information Technology. I have passion for creating things. I'm constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange of toughts and ideas.</p>
 		<Anchorheader anchor="skills">
 			Technical Skills
 		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
+		<p>
+			Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of it. If it catches my interest, I'll definitely look it up. As of this momment, below are what I have in my armory.
+		</p>
 		<div class="tags">
 			<span class="tag is-primary is-medium">HMTL, CSS &amp; JavaScript</span>
 			<span class="tag is-primary is-medium">SASS/SCSS</span>
@@ -30,7 +32,9 @@
 		<Anchorheader anchor="skills">
 			Hobbies &amp; Interests 
 		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
+		<p>
+			I'm not just a software developer. I always find time and myself in other particular activities. I try to be active in my personal and leisure activites despite my workloads. Below are what drives me to work harder everyday.
+		</p>
 		<div class="tags">
 			<span class="tag is-primary is-medium">Motorcycles</span>
 			<span class="tag is-primary is-medium">Photography</span>

@@ -1,11 +1,8 @@
 <template>
 	<div class="works">
-		<div class="content">
-			<h1 class="title is-1">
-				Works &amp; Creations
-			</h1>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
-		</div>
+		<h1 class="title is-1">
+			Works &amp; Creations
+		</h1>
 		<div class="columns is-multiline" v-if="workArticles.length">
 			<div class="column is-one-third-tablet is-one-quarter-widescreen"
 				v-for="(workArticle, index) in workArticles" 

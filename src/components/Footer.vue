@@ -13,14 +13,7 @@
 		font-family: $family-secondary;
 
 		p {
-			color: $text-strong;
-
-			@include darkTheme {
-				color: $text-strong-dark;
-			}
-			@include lightTheme {
-				color: $text-strong;
-			}
+			color: $text-strong-dark;
 		}
 	}
 </style>

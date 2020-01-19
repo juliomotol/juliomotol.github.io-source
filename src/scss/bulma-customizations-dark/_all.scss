@@ -23,16 +23,16 @@
 
 // Elements
 @import "./elements/box";
-@import 'bulma-prefers-dark/sass/elements/button.sass';
+// @import 'bulma-prefers-dark/sass/elements/button.sass';
 @import 'bulma-prefers-dark/sass/elements/content.sass';
 @import './elements/form';
 // @import "bulma-prefers-dark/sass/elements/notification.sass";
 // @import "bulma-prefers-dark/sass/elements/progress.sass";
 // @import "bulma-prefers-dark/sass/elements/table.sass";
-@import 'bulma-prefers-dark/sass/elements/tag.sass';
+// @import 'bulma-prefers-dark/sass/elements/tag.sass';
 @import './elements/title';
 // @import "bulma-prefers-dark/sass/elements/other.sass";
 
 // Layout
 // @import "bulma-prefers-dark/sass/layout/hero.sass";
-@import 'bulma-prefers-dark/sass/layout/footer.sass';
+@import './layout/footer';

@@ -2,19 +2,21 @@
 	<div class="columns is-gapless jm" ref="app">
 		<Alert ref="alert"/>
 		<DynamicBackground :backgroundImage="backgroundImage"/>
-        <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__container']">
-			<Navigation/>
-			<div class="is-hidden-tablet is-hidden-desktop jm__mobile-spacer"></div>
-			<OverlayScrollbars class="jm__content-wrapper" :options="{ 
-				className: isDarkMode ? 'os-theme-light' : 'os-theme-dark', 
-				overflowBehavior: { x: 'hidden' } 
-			}" ref="overlayScrollbar">
-				<transition mode="out-in" name="fade-out-slide-in">
-					<router-view class="page" 
-						@toggleFullPage="(value) => isFullPage = value"
-						@setBackground="(value) => backgroundImage = value"/>
-				</transition>
-			</OverlayScrollbars>
+        <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__main']">
+			<div class="jm__container">
+				<Navigation/>
+				<div class="is-hidden-tablet jm__mobile-spacer"></div>
+				<OverlayScrollbars class="jm__content-wrapper" :options="{ 
+					className: isDarkMode ? 'os-theme-light' : 'os-theme-dark', 
+					overflowBehavior: { x: 'hidden' } 
+				}" ref="overlayScrollbar">
+					<transition mode="out-in" name="fade-out-slide-in">
+						<router-view class="page" 
+							@toggleFullPage="(value) => isFullPage = value"
+							@setBackground="(value) => backgroundImage = value"/>
+					</transition>
+				</OverlayScrollbars>
+			</div>
 			<Footer/>
         </div>
     </div>
@@ -95,24 +97,30 @@
 		&__mobile-spacer{
 			height: calc(100vw - 54px);
 		}
-        &__container{
+		&__main{
 			z-index: 1;
             transition: width 0.5s ease;
+			background: linear-gradient(to right, $primary, $primary-light);
+			display: flex;
+			flex-direction: column;
+		}
+        &__container{
             border-radius: 0 0 32px 0;
 			overflow: hidden;
 			
 			@include tablet{
-				height: 100vh;
+				height: calc(100vh - 40px);
 			}
 		}
 		&__content-wrapper {
 			background: linear-gradient($scheme-main, $scheme-main-ter);
 
-			@include darkTheme {
-				background: linear-gradient($scheme-invert, $scheme-invert-ter);
-			}
-			@include lightTheme {
-				background: linear-gradient($scheme-main, $scheme-main-ter);
+			@include colorScheme using($theme) {
+				@if $theme == light {
+					background: linear-gradient($scheme-main, $scheme-main-ter);
+				} @else if $theme == dark {
+					background: linear-gradient($scheme-invert, $scheme-invert-ter);
+				}
 			}
 			@include mobile(){
 				min-height: calc(100vh - 100vw - 40px);
@@ -133,22 +141,23 @@
 					top: 0;
 					background: linear-gradient($scheme-main, transparent);
 
-					@include darkTheme {
-						background: linear-gradient($scheme-invert, transparent);
-					}
-					@include lightTheme {
-						background: linear-gradient($scheme-main, transparent);
+					@include colorScheme using($theme) {
+						@if $theme == light {
+							background: linear-gradient($scheme-main, transparent);
+						} @else if $theme == dark {
+							background: linear-gradient($scheme-invert, transparent);
+						}
 					}
 				}
 				&:after {
 					bottom: 0;
-					background: linear-gradient(transparent, $scheme-main-ter);
 
-					@include darkTheme {
-						background: linear-gradient(transparent, $scheme-invert-ter);
-					}
-					@include lightTheme {
-						background: linear-gradient(transparent, $scheme-main-ter);
+					@include colorScheme using($theme) {
+						@if $theme == light {
+							background: linear-gradient(transparent, $scheme-main-ter);
+						} @else if $theme == dark {
+							background: linear-gradient(transparent, $scheme-invert-ter);
+						}
 					}
 				}
 				.os-scrollbar {
