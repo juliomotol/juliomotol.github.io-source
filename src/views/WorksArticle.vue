@@ -1,5 +1,5 @@
 <template>
-	<div class="work-article">
+	<main class="work-article">
         <h1 class="title is-1">{{ workArticle.title }}</h1>
         <h3 class="subtitle is-6">
             <time :datetime="workArticle.createdAt.toDate().toISOString()">
@@ -12,7 +12,7 @@
                          target: '_blank',
                          rel: 'noreferrer noopenner'
                      }"/>
-    </div>
+    </main>
 </template>
 
 <script>
@@ -31,18 +31,9 @@
 				workArticle: []
 			};
         },
-        created(){
-            console.log('created');
-        },
-        mounted(){
-            console.log('mounted');
-        },
         beforeRouteEnter (to, from, next) {
-            console.log('beforeRouteEnter');
             next(vm => {
                 vm.$bind('workArticle', Firestore.collection('work_articles').doc(vm.$route.params.slug));
-                
-                console.log('beforeRouteEnter.next');
             })
         },
 	};

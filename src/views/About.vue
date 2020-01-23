@@ -1,12 +1,12 @@
 <template>
-	<div class="about content">
+	<main class="about content">
 		<h1 class="title is-1">
 			Some things about me
 		</h1>
 		<Anchorheader anchor="intro">
 			A Short Bio
 		</Anchorheader>
-		<p>I'm Julio, an aspiring full-stack developer from the Philippines. Had a rough childhood but is now making the best out of what life can offer. I studied at the Far Eastern University - Makati where I finished BS Information Technology. I have passion for creating things. I'm constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange of toughts and ideas.</p>
+		<p>I'm Julio, an aspiring full-stack developer from the Philippines. I studied at the Far Eastern University - Makati where I finished BS Information Technology. I have passion(addiction) for creating things. I'm constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange of toughts and ideas. I love cats and dogs, but I'm afraid I might not have time to play with them.</p>
 		<Anchorheader anchor="skills">
 			Technical Skills
 		</Anchorheader>
@@ -48,7 +48,7 @@
 			<router-link :to="{name: 'works'}" class="button is-primary">See what I can do</router-link>
 			<!-- <router-link :to="{name: 'resume'}" class="button is-primary is-outlined">View Resume</router-link> -->
 		</div>
-	</div>
+	</main>
 </template>
 
 <script>

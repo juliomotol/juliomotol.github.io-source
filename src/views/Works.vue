@@ -1,5 +1,5 @@
 <template>
-	<div class="works">
+	<main class="works">
 		<h1 class="title is-1">
 			Works &amp; Creations
 		</h1>
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-	<div class="columns is-gapless jm" ref="app">
+	<body class="columns is-gapless jm" ref="app">
 		<Alert ref="alert"/>
 		<DynamicBackground :backgroundImage="backgroundImage"/>
         <div :class="['column', (isFullPage ? 'is-full' : 'is-half'), 'jm__main']">
@@ -19,7 +19,7 @@
 			</div>
 			<Footer/>
         </div>
-    </div>
+    </body>
 </template>
 
 <script>
@@ -69,10 +69,6 @@
 	@import '~overlayscrollbars/css/OverlayScrollbars.css';
 
 	@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap");
-
-	$family-sans-serif: "Open Sans";
-	$family-primary: 'Roboto Slab';
-	$family-secondary: 'Open Sans';
 
     @import 'bulma/sass/base/minireset.sass';
 	@import './scss/bulma-customizations/all';

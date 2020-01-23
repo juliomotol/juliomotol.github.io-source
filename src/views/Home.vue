@@ -1,5 +1,5 @@
 <template>
-	<div class="home">
+	<main class="home">
 		<div class="home__content">
 			<img src="../assets/logo_banner_light.svg" alt="logo_banner" v-if="isDarkMode">
 			<img src="../assets/logo_banner.svg" alt="logo_banner" v-else>
@@ -11,7 +11,7 @@
 				<router-link :to="{name: 'contact'}" class="button is-primary is-outlined">Get in touch</router-link>
 			</div>
 		</div>
-	</div>
+	</main>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-	<div class="contact content">
+	<main class="contact content">
 		<h1 class="title is-1">
 			Get in touch
 		</h1>
@@ -123,7 +123,7 @@
 		<div class="buttons">
 			<router-link :to="{name: 'resume'}" class="button is-primary">View Resume</router-link>
 		</div> -->
-	</div>
+	</main>
 </template>
 
 <script>

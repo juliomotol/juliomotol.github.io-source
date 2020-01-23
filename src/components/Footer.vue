@@ -13,7 +13,7 @@
 		font-family: $family-secondary;
 
 		p {
-			color: $text-strong-dark;
+			color: $white;
 		}
 	}
 </style>
