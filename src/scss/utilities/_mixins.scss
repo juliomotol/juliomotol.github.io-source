@@ -1,0 +1,27 @@
+@import 'bulma/sass/utilities/mixins.sass';
+
+@mixin darkTheme {
+	@media (prefers-color-scheme: dark) {
+		@content;
+	}
+	html.dark-theme & {
+		@content;
+	}
+}
+
+@mixin lightTheme {
+	html.light-theme & {
+		@content;
+	}
+}
+
+@mixin colorScheme() {
+    @content(light);
+
+	@include darkTheme {
+        @content(dark);
+	}
+	@include lightTheme {
+        @content(light);
+	}
+}
