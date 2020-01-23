@@ -1,7 +1,7 @@
 # juliomotol.github.io
 
 ## Overview
-juliomotol.github.io is a portfolio website to showcase personal projects powered by [Vue.js](https://www.github.com/vuejs/vue). It is aimed to target prospective clients, customers and employers.
+juliomotol.github.io is a portfolio website to showcase personal projects powered by [Vue.js](https://www.github.com/vuejs/vue). It is aimed to target prospective clients and employers.
 
 ## Goals
 - Create an immersive website with current UI/UX trends.
@@ -14,29 +14,6 @@ juliomotol.github.io is a portfolio website to showcase personal projects powere
 - [x] Wireframes
 ### Phase 2: Website Development
 - [x] Project Setup
-- [ ] Development
-- [ ] Feedbacks and Adjustments
+- [x] Development
 ### Phase 3: Public Release
-
-## Sitemap
-![sitemap](./src/assets/sitemap.png)
-<!-- 
-## Design
-### Branding
-### Wireframe 
--->
-## Features & Functionality
-### General Features:
-- Dark mode theme
-
-### About
-- Bio
-- Skills
-### Works
-- Preview Project
-### Contact
-- Contact Informations
-- Social accounts
-- Send inquiry via email
-
-
+- [ ] Feedbacks and Adjustments
