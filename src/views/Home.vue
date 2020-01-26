@@ -29,10 +29,17 @@
 </script>
 
 <style lang="scss">
+	@import '../scss/utilities/all';
+
 	.home{
-        min-height: calc(100vh - 54px - 40px);
+        min-height: calc(100vh - 56px - 40px);
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+
+		@include mobile(){
+			padding: 64px 32px !important;
+			min-height: calc(100vh - 100vw - 40px);
+		}
 	}
 </style>

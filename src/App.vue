@@ -91,7 +91,7 @@
 		margin: 0 !important;
 
 		&__mobile-spacer{
-			height: calc(100vw - 54px);
+			height: calc(100vw - 56px);
 		}
 		&__main{
 			z-index: 1;
@@ -122,8 +122,7 @@
 				min-height: calc(100vh - 100vw - 40px);
 			}
 			@include tablet {
-				height: calc(100vh - 54px - 40px);
-				min-height: calc(100vh - 54px - 40px);
+				height: calc(100vh - 56px - 40px);
 
 				&:before,
 				&:after {
