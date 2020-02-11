@@ -14,7 +14,7 @@
     "core-js": "^3.4.3",
     "firebase": "^7.8.1",
     "overlayscrollbars": "^1.10.3",
-    "overlayscrollbars-vue": "^0.2.0",
+    "overlayscrollbars-vue": "^0.2.1",
     "register-service-worker": "^1.6.2",
     "vee-validate": "^3.2.1",
     "vue": "^2.6.10",
