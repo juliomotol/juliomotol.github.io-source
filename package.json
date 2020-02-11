@@ -14,7 +14,7 @@
     "core-js": "^3.4.3",
     "firebase": "^7.8.1",
     "overlayscrollbars": "^1.10.3",
-    "overlayscrollbars-vue": "^0.2.0",
+    "overlayscrollbars-vue": "^0.2.1",
     "register-service-worker": "^1.6.2",
     "vee-validate": "^3.2.1",
     "vue": "^2.6.10",
@@ -25,10 +25,10 @@
     "vuex-persistedstate": "^2.7.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-eslint": "^4.2.2",
     "@vue/cli-plugin-pwa": "^4.2.2",
-    "@vue/cli-plugin-router": "^4.1.0",
+    "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-plugin-vuex": "^4.2.2",
     "@vue/cli-service": "^4.2.2",
     "babel-eslint": "^10.0.3",
