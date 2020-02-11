@@ -6,7 +6,7 @@
 		<Anchorheader anchor="socail_accounts">
 			Social Accounts
 		</Anchorheader>
-		<p>You can find in most social media site (though I may not be active in posting). Hit me up if you ever like it or follow me to keep in the touch with the following social media site.</p>
+		<p>You can find me in most social media sites (though I may not be active in posting). Hit me up if you ever like it or follow me to keep in the touch with the following social media site.</p>
 		<div class="buttons">
 			<a class="button is-primary is-fb" href="https://www.facebook.com/juliomotol89" target="_blank" rel="noreferrer noopenner">
                 <span class="icon"><i class="fab fa-facebook-square"></i></span>

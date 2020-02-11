@@ -11,7 +11,7 @@
 			Technical Skills
 		</Anchorheader>
 		<p>
-			Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of it. If it catches my interest, I'll definitely look it up. As of this momment, below are what I have in my armory.
+			Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of it. If it catches my interest, I'll definitely look it up. As of this moment, below are what I have in my armory.
 		</p>
 		<div class="tags">
 			<span class="tag is-primary is-medium">HMTL, CSS &amp; JavaScript</span>
