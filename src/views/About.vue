@@ -6,12 +6,23 @@
 		<Anchorheader anchor="intro">
 			A Short Bio
 		</Anchorheader>
-		<p>I'm Julio, an aspiring full-stack developer from the Philippines. I studied at the Far Eastern University - Makati where I finished BS Information Technology. I have passion(addiction) for creating things. I'm constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange of toughts and ideas. I love cats and dogs, but I'm afraid I might not have time to play with them.</p>
+		<p>
+			I'm Julio, an aspiring full-stack developer from the Philippines. I
+			studied at the Far Eastern University - Makati where I finished BS
+			Information Technology. I have passion(addiction) for creating
+			things. I'm constantly thinking of ways to do things better and
+			faster. I enjoy working in teams specially the exchange of toughts
+			and ideas. I love cats and dogs, but I'm afraid I might not have
+			time to play with them.
+		</p>
 		<Anchorheader anchor="skills">
 			Technical Skills
 		</Anchorheader>
 		<p>
-			Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of it. If it catches my interest, I'll definitely look it up. As of this moment, below are what I have in my armory.
+			Exploring new programming languages and frameworks can be
+			intimidating but I always enjoy the challenge of it. If it catches
+			my interest, I'll definitely look it up. As of this moment, below
+			are what I have in my armory.
 		</p>
 		<div class="tags">
 			<span class="tag is-primary is-medium">HMTL, CSS &amp; JavaScript</span>
@@ -30,10 +41,13 @@
 			<span class="tag is-primary is-medium">Adobe XD</span>
 		</div>
 		<Anchorheader anchor="skills">
-			Hobbies &amp; Interests 
+			Hobbies &amp; Interests
 		</Anchorheader>
 		<p>
-			I'm not just a software developer. I always find time and myself in other particular activities. I try to be active in my personal and leisure activites despite my workloads. Below are what drives me to work harder everyday.
+			I'm not just a software developer. I always find time and myself in
+			other particular activities. I try to be active in my personal and
+			leisure activites despite my workloads. Below are what drives me to
+			work harder everyday.
 		</p>
 		<div class="tags">
 			<span class="tag is-primary is-medium">Motorcycles</span>
@@ -45,7 +59,7 @@
 			<span class="tag is-primary is-medium">Music</span>
 		</div>
 		<div class="buttons">
-			<router-link :to="{name: 'works'}" class="button is-primary">See what I can do</router-link>
+			<router-link :to="{ name: 'works' }" class="button is-primary">See what I can do</router-link>
 			<!-- <router-link :to="{name: 'resume'}" class="button is-primary is-outlined">View Resume</router-link> -->
 		</div>
 	</main>
@@ -56,9 +70,9 @@
 	import Page from '../components/Page';
 
 	export default {
-        extends: Page,
-		components:{
+		extends: Page,
+		components: {
 			Anchorheader
 		}
-	}
+	};
 </script>

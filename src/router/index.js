@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
 	{
@@ -29,18 +29,18 @@ const routes = [
 		path: '/contact',
 		name: 'contact',
 		component: () => import(/* webpackChunkName: "contact" */ '../views/Contact.vue')
-	},
+	}
 	// {
 	// 	path: '/contact/resume',
 	// 	name: 'resume',
 	// 	component: () => import(/* webpackChunkName: "contact" */ '../views/Resume.vue')
 	// },
-]
+];
 
 const router = new VueRouter({
 	base: process.env.BASE_URL,
 	routes,
-	linkActiveClass: 'is-active',
-})
+	linkActiveClass: 'is-active'
+});
 
-export default router
+export default router;

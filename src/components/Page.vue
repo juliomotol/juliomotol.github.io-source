@@ -1,22 +1,22 @@
 <script>
 	export default {
-		data(){
+		data() {
 			return {
 				backgroundImage: null,
-				isFullPage: false,
-			}
+				isFullPage: false
+			};
 		},
 		watch: {
-			backgroundImage(newVal){
+			backgroundImage(newVal) {
 				this.$emit('setBackground', newVal);
 			},
-			isFullPage(newVal){
+			isFullPage(newVal) {
 				this.$emit('toggleFullPage', newVal);
-			},
+			}
 		},
 		mounted() {
 			this.$emit('setBackground', this.backgroundImage);
 			this.$emit('toggleFullPage', this.isFullPage);
-		},
+		}
 	};
 </script>

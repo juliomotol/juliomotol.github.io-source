@@ -17,9 +17,9 @@ $card-content-padding: 24px;
 
 // $card-media-margin: $block-spacing;
 
-@import "bulma/sass/components/card.sass";
+@import 'bulma/sass/components/card.sass';
 
-.card{
-    border-radius: $radius-large;
-    overflow: hidden;
+.card {
+	border-radius: $radius-large;
+	overflow: hidden;
 }
