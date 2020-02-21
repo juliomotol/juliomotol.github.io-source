@@ -1,27 +1,36 @@
 <template>
 	<body class="columns is-gapless jm" ref="app">
-		<Alert ref="alert"/>
-		<DynamicBackground :backgroundImage="backgroundImage"/>
+		<Alert ref="alert" />
+		<DynamicBackground :backgroundImage="backgroundImage" />
 		<div :class="['column', isFullPage ? 'is-full' : 'is-half', 'jm__main']">
 			<div class="jm__container">
-				<Navigation/>
+				<Navigation />
+				<GithubCorner
+					repo="juliomotol/juliomotol.github.io-source"
+					target="_blank"
+					rel="noreferrer noopenner"
+				/>
 				<div class="is-hidden-tablet jm__mobile-spacer"></div>
-				<OverlayScrollbars class="jm__content-wrapper"
+				<OverlayScrollbars
+					class="jm__content-wrapper"
 					:options="{
 						className: isDarkMode
 							? 'os-theme-light'
 							: 'os-theme-dark',
 						overflowBehavior: { x: 'hidden' }
 					}"
-					ref="overlayScrollbar">
+					ref="overlayScrollbar"
+				>
 					<transition mode="out-in" name="fade-out-slide-in">
-						<router-view class="page"
+						<router-view
+							class="page"
 							@toggleFullPage="value => (isFullPage = value)"
-							@setBackground="value => (backgroundImage = value)"/>
+							@setBackground="value => (backgroundImage = value)"
+						/>
 					</transition>
 				</OverlayScrollbars>
 			</div>
-			<Footer/>
+			<Footer />
 		</div>
 	</body>
 </template>
@@ -33,6 +42,7 @@
 	import Alert from './components/Alert';
 	import DynamicBackground from './components/DynamicBackground';
 	import Footer from './components/Footer';
+	import GithubCorner from './components/GithubCorner';
 	import Navigation from './components/Navigation';
 
 	export default {
@@ -40,6 +50,7 @@
 			Alert,
 			DynamicBackground,
 			Footer,
+			GithubCorner,
 			Navigation,
 			OverlayScrollbars
 		},
@@ -108,6 +119,16 @@
 			border-radius: 0 0 32px 0;
 			overflow: hidden;
 
+			@include mobile {
+				min-height: calc(100vh - 100vw - 40px);
+			}
+
+			.github-corner__graphic {
+				@include mobile {
+					top: 56px;
+				}
+			}
+
 			@include tablet {
 				height: calc(100vh - 40px);
 			}
@@ -125,7 +146,7 @@
 					);
 				}
 			}
-			@include mobile() {
+			@include mobile {
 				min-height: calc(100vh - 100vw - 40px);
 			}
 			@include tablet {
@@ -179,7 +200,7 @@
 				}
 			}
 			.page {
-				@include mobile() {
+				@include mobile {
 					padding: 32px;
 				}
 				@include tablet {
