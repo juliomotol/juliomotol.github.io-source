@@ -160,12 +160,12 @@
 </template>
 
 <script>
-	import Anchorheader from '../components/AnchorHeader';
-	import Page from '../components/Page';
+	import Anchorheader from '../../../components/AnchorHeader';
+	import Page from '../../../components/Page';
 
 	import { ValidationObserver, ValidationProvider } from 'vee-validate';
 	import { mapActions } from 'vuex';
-	import Firestore from '../utilities/Firestore';
+	import Firestore from '../../../utilities/Firestore';
 	import firebase from 'firebase/app';
 
 	export default {
@@ -194,12 +194,12 @@
 
 						Firestore.collection('inquiries')
 							.add({
-                            name:       this.inquiryForm.name,
-                            email:      this.inquiryForm.email,
-                            subject:    this.inquiryForm.subject,
-                            message:    this.inquiryForm.message,
-                            isRead:     false,
-                            createdAt:  firebase.firestore.FieldValue.serverTimestamp()
+								name:       this.inquiryForm.name,
+								email:      this.inquiryForm.email,
+								subject:    this.inquiryForm.subject,
+								message:    this.inquiryForm.message,
+								isRead:     false,
+								createdAt:  firebase.firestore.FieldValue.serverTimestamp()
 							})
 							.catch(() => {
 								this.showAlert({
@@ -231,7 +231,7 @@
 </script>
 
 <style lang="scss">
-	@import '../scss/utilities/all';
+	@import '../../../scss/utilities/all';
 
 	$button-fb-background-color: #3b5998;
 	$button-instagram-background-color: #feda77, #f58529, #dd2a7b, #8134af,

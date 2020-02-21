@@ -1,10 +1,10 @@
 <template>
 	<main class="home">
 		<div class="home__content">
-			<img src="../assets/logo_banner_light.svg"
+			<img src="../../../assets/logo_banner_light.svg"
 				alt="logo_banner"
 				v-if="isDarkMode"/>
-			<img src="../assets/logo_banner.svg" 
+			<img src="../../../assets/logo_banner.svg" 
 				alt="logo_banner" 
 				v-else/>
 			<h1 class="title is-1">
@@ -22,7 +22,7 @@
 
 <script>
 	import { mapState } from 'vuex';
-	import Page from '../components/Page';
+	import Page from '../../../components/Page';
 
 	export default {
 		extends: Page,
@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss">
-	@import '../scss/utilities/all';
+	@import '../../../scss/utilities/all';
 
 	.home {
 		min-height: calc(100vh - 56px - 40px);
