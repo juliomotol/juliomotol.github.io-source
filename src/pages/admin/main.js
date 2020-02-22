@@ -3,8 +3,8 @@ import router from './router';
 import store from './store';
 import { firestorePlugin } from 'vuefire';
 import App from './App.vue';
-import './registerServiceWorker';
-import './utilities/vee-validate';
+import '../../registerServiceWorker';
+import '../../utilities/vee-validate';
 
 Vue.use(firestorePlugin);
 

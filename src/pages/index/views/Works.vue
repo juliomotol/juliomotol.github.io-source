@@ -5,13 +5,16 @@
 		</h1>
 		<div class="columns is-multiline" v-if="workArticles.length">
 			<div class="column is-one-third-tablet is-one-quarter-widescreen"
-				v-for="(workArticle, index) in workArticles" 
+				v-for="(workArticle, index) in workArticles"
 				:key="index">
-				<router-link :to="{name: 'works-article', params: {slug: workArticle.id}}">
+				<router-link :to="{
+						name: 'works-article',
+						params: { slug: workArticle.id }
+					}">
 					<WorkCard :thumbnail="workArticle.thumbnail"
-							:title="workArticle.title"
-							:tags="workArticle.tags"
-							:date="workArticle.createdAt.toDate()"/>
+						:title="workArticle.title"
+						:tags="workArticle.tags"
+						:date="workArticle.createdAt.toDate()"/>
 				</router-link>
 			</div>
 		</div>
@@ -35,24 +38,24 @@
 </template>
 
 <script>
-	import Page from '../components/Page';
-	import WorkCard from '../components/WorkCard';
+	import Page from '../../../components/Page';
+	import WorkCard from '../../../components/WorkCard';
 
-    import Firestore from '../utilities/Firestore';
+	import Firestore from '../../../utilities/Firestore';
 
 	export default {
-        extends: Page,
-		components:{
-			WorkCard,
+		extends: Page,
+		components: {
+			WorkCard
 		},
 		data() {
 			return {
 				isFullPage: true,
-				workArticles:[],
-			}
+				workArticles: []
+			};
 		},
 		firestore: {
-			workArticles: Firestore.collection('work_articles').where('isPublished', '==', true),
+			workArticles: Firestore.collection('work_articles').where('isPublished', '==', true)
 		}
-	}
+	};
 </script>

@@ -16,12 +16,12 @@
 }
 
 @mixin colorScheme() {
-    @content(light);
+	@content (light);
 
 	@include darkTheme {
-        @content(dark);
+		@content (dark);
 	}
 	@include lightTheme {
-        @content(light);
+		@content (light);
 	}
 }

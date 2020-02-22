@@ -6,6 +6,6 @@ extend('email', email);
 
 // Override the default message.
 extend('required', {
-    ...required,
-    message: '{_field_} is required'
+	...required,
+	message: '{_field_} is required'
 });
