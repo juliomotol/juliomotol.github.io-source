@@ -19,15 +19,15 @@
     "vee-validate": "^3.2.5",
     "vue": "^2.6.10",
     "vue-markdown": "^2.2.4",
-    "vue-router": "^3.1.5",
+    "vue-router": "^3.1.6",
     "vuefire": "^2.2.1",
     "vuex": "^3.1.2",
     "vuex-persistedstate": "^2.7.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.2.2",
+    "@vue/cli-plugin-babel": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
-    "@vue/cli-plugin-pwa": "^4.2.2",
+    "@vue/cli-plugin-pwa": "^4.2.3",
     "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-plugin-vuex": "^4.2.2",
     "@vue/cli-service": "^4.2.2",
