@@ -15,7 +15,7 @@
     "firebase": "^7.13.0",
     "overlayscrollbars": "^1.11.0",
     "overlayscrollbars-vue": "^0.2.1",
-    "register-service-worker": "^1.6.2",
+    "register-service-worker": "^1.7.1",
     "vee-validate": "^3.2.5",
     "vue": "^2.6.10",
     "vue-markdown": "^2.2.4",
