@@ -8,10 +8,19 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1.4.1
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v1.4.1
       with:
         node_version: 12.0
+    - name: Cache Dependencies 
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
     - name: Install NPM Packages
       run: npm ci
     - name: Build Vue.js Application
