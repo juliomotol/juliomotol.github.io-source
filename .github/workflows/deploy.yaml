@@ -13,7 +13,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v1.4.1
       with:
-        node_version: 12.0
+        node-version: '12.x'
     - name: Cache Dependencies 
       uses: actions/cache@v1
       with:
