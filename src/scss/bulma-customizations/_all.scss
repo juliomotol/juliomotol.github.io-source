@@ -8,7 +8,7 @@ $family-secondary: 'Open Sans';
 @import './utilities/all';
 
 @import 'bulma/sass/base/generic.sass';
-@import 'bulma/sass/base/helpers.sass';
+@import 'bulma/sass/helpers/_all.sass';
 
 @import './components/card';
 @import './components/navbar';
