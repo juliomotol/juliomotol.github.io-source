@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
 
-import alert from '../../store/alert';
-import preferences from '../../store/preferences';
+import alert from './modules/alert';
+import preferences from './modules/preferences';
 
 Vue.use(Vuex);
 

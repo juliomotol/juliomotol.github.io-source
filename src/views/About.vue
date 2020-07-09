@@ -66,8 +66,8 @@
 </template>
 
 <script>
-	import Anchorheader from '../../../components/AnchorHeader';
-	import Page from '../../../components/Page';
+	import Anchorheader from '../components/AnchorHeader';
+	import Page from '../components/Page';
 
 	export default {
 		extends: Page,

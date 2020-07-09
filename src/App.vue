@@ -39,11 +39,11 @@
 	import { mapState, mapActions } from 'vuex';
 	import { OverlayScrollbarsComponent as OverlayScrollbars } from 'overlayscrollbars-vue';
 
-	import Alert from '../../components/Alert';
-	import DynamicBackground from '../../components/DynamicBackground';
-	import Footer from '../../components/Footer';
-	import GithubCorner from '../../components/GithubCorner';
-	import Navigation from '../../components/Navigation';
+	import Alert from './components/Alert';
+	import DynamicBackground from './components/DynamicBackground';
+	import Footer from './components/Footer';
+	import GithubCorner from './components/GithubCorner';
+	import Navigation from './components/Navigation';
 
 	export default {
 		components: {
@@ -75,7 +75,7 @@
 </script>
 
 <style lang="scss">
-	$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+	$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
 
 	@import '@fortawesome/fontawesome-free';
 	@import '@fortawesome/fontawesome-free/scss/brands.scss';
@@ -86,19 +86,19 @@
 	@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap');
 
 	@import 'bulma/sass/base/minireset.sass';
-	@import '../../scss/bulma-customizations/all';
-	@import '../../scss/utilities/mixins';
+	@import './scss/bulma-customizations/all';
+	@import './scss/utilities/mixins';
 
 	@media (prefers-color-scheme: dark) {
-		@import '../../scss/bulma-customizations-dark/all';
+		@import './scss/bulma-customizations-dark/all';
 	}
 	html.dark-theme {
-		@import '../../scss/bulma-customizations-dark/all';
+		@import './scss/bulma-customizations-dark/all';
 
 		background-color: $body-background-dark;
 	}
 	html.light-theme {
-		@import '../../scss/bulma-customizations/all';
+		@import './scss/bulma-customizations/all';
 
 		background-color: $body-background-color;
 	}

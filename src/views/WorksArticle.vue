@@ -16,10 +16,10 @@
 </template>
 
 <script>
-	import Page from '../../../components/Page';
+	import Page from '../components/Page';
 	import VueMarkdown from 'vue-markdown';
 
-	import Firestore from '../../../utilities/Firestore';
+	import Firestore from '../utilities/Firestore';
 
 	export default {
 		extends: Page,

@@ -38,10 +38,10 @@
 </template>
 
 <script>
-	import Page from '../../../components/Page';
-	import WorkCard from '../../../components/WorkCard';
+	import Page from '../components/Page';
+	import WorkCard from '../components/WorkCard';
 
-	import Firestore from '../../../utilities/Firestore';
+	import Firestore from '../utilities/Firestore';
 
 	export default {
 		extends: Page,
