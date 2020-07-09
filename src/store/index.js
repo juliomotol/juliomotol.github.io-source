@@ -8,17 +8,17 @@ import preferences from './modules/preferences';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	state: {},
-	mutations: {},
-	actions: {},
-	modules: {
-		alert,
-		preferences
-	},
-	plugins: [
-		createPersistedState({
-			key: 'jm',
-			paths: ['preferences']
-		})
-	]
+    state: {},
+    mutations: {},
+    actions: {},
+    modules: {
+        alert,
+        preferences,
+    },
+    plugins: [
+        createPersistedState({
+            key: 'jm',
+            paths: ['preferences'],
+        }),
+    ],
 });
