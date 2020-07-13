@@ -1,6 +1,5 @@
 <template>
     <body class="columns is-gapless jm" ref="app">
-        <Alert ref="alert" />
         <DynamicBackground :backgroundImage="backgroundImage" />
         <div :class="['column', isFullPage ? 'is-full' : 'is-half', 'jm__main']">
             <div class="jm__container">
@@ -37,7 +36,6 @@
 import { mapState, mapActions } from 'vuex';
 import { OverlayScrollbarsComponent as OverlayScrollbars } from 'overlayscrollbars-vue';
 
-import Alert from './components/Alert';
 import DynamicBackground from './components/DynamicBackground';
 import Footer from './components/Footer';
 import GithubCorner from './components/GithubCorner';
@@ -45,7 +43,6 @@ import Navigation from './components/Navigation';
 
 export default {
     components: {
-        Alert,
         DynamicBackground,
         Footer,
         GithubCorner,
