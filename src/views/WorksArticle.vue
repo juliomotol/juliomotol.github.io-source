@@ -21,8 +21,6 @@
 import Page from '../components/Page';
 import VueMarkdown from 'vue-markdown';
 
-import Firestore from '../utilities/Firestore';
-
 export default {
     extends: Page,
     components: {
@@ -32,9 +30,6 @@ export default {
         return {
             workArticle: [],
         };
-    },
-    beforeRouteEnter(to, from, next) {
-        next((vm) => vm.$bind('workArticle', Firestore.collection('work_articles').doc(vm.$route.params.slug)));
     },
 };
 </script>

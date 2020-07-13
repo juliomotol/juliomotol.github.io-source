@@ -52,131 +52,16 @@
             Send a Message
         </Anchorheader>
         <p>
-            Got a question, project needed to made or a lovely message that you want to send? Fill up the form below and
-            I'll respond as soon as I can.
+            Got a question, project needed to made or a lovely message that you want to send? Send me an email at
+            <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.
         </p>
-        <ValidationObserver
-            tag="form"
-            class="columns is-multiline is-variable is-2"
-            @submit.prevent="sendMessage"
-            ref="inquiryForm"
-        >
-            <div class="column is-half">
-                <div class="field">
-                    <label class="label" for="name">Name</label>
-                    <ValidationProvider
-                        v-slot="{ errors, failed }"
-                        name="Name"
-                        rules="required"
-                        tag="div"
-                        class="control"
-                    >
-                        <input
-                            :class="['input', failed ? 'is-danger' : '']"
-                            v-model="inquiryForm.name"
-                            id="name"
-                            type="text"
-                            placeholder="John Doe"
-                            :disabled="inquiryForm.isLoading"
-                        />
-                        <p :class="['help', failed ? 'is-danger' : '']">
-                            {{ errors[0] || '' }}
-                        </p>
-                    </ValidationProvider>
-                </div>
-            </div>
-            <div class="column is-half">
-                <div class="field">
-                    <label class="label" for="email">Email</label>
-                    <ValidationProvider
-                        v-slot="{ errors, failed }"
-                        name="Email"
-                        rules="required|email"
-                        tag="div"
-                        class="control"
-                    >
-                        <input
-                            :class="['input', failed ? 'is-danger' : '']"
-                            v-model="inquiryForm.email"
-                            id="email"
-                            type="email"
-                            placeholder="johndoe@mail.com"
-                            :disabled="inquiryForm.isLoading"
-                        />
-                        <p :class="['help', failed ? 'is-danger' : '']">
-                            {{ errors[0] || '' }}
-                        </p>
-                    </ValidationProvider>
-                </div>
-            </div>
-            <div class="column is-full">
-                <div class="field">
-                    <label class="label" for="subject">Subject</label>
-                    <ValidationProvider
-                        v-slot="{ errors, failed }"
-                        name="Subject"
-                        rules="required"
-                        tag="div"
-                        class="control"
-                    >
-                        <input
-                            :class="['input', failed ? 'is-danger' : '']"
-                            v-model="inquiryForm.subject"
-                            id="subject"
-                            type="text"
-                            :disabled="inquiryForm.isLoading"
-                        />
-                        <p :class="['help', failed ? 'is-danger' : '']">
-                            {{ errors[0] || '' }}
-                        </p>
-                    </ValidationProvider>
-                </div>
-                <div class="field">
-                    <label class="label" for="message">Message</label>
-                    <ValidationProvider
-                        v-slot="{ errors, failed }"
-                        name="Message"
-                        rules="required"
-                        tag="div"
-                        class="control"
-                    >
-                        <textarea
-                            :class="['textarea', failed ? 'is-danger' : '']"
-                            v-model="inquiryForm.message"
-                            id="message"
-                            :disabled="inquiryForm.isLoading"
-                        >
-                        </textarea>
-                        <p :class="['help', failed ? 'is-danger' : '']">
-                            {{ errors[0] || '' }}
-                        </p>
-                    </ValidationProvider>
-                </div>
-                <div class="field">
-                    <div class="control">
-                        <button
-                            :class="['button', 'is-primary', inquiryForm.isLoading ? 'is-loading' : '']"
-                            :disabled="inquiryForm.isLoading"
-                        >
-                            Send Message
-                        </button>
-                    </div>
-                </div>
-                <p>
-                    For further inquiries, email them to
-                    <a href="mailto:julio.motol89@gmail.com" target="_blank" rel="noreferrer noopenner"
-                        >julio.motol89@gmail.com</a
-                    >.
-                </p>
-            </div>
-        </ValidationObserver>
         <!-- <Anchorheader anchor="resume">
-			Resume 
-		</Anchorheader>
-		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
-		<div class="buttons">
-			<router-link :to="{name: 'resume'}" class="button is-primary">View Resume</router-link>
-		</div> -->
+            Resume 
+        </Anchorheader>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
+        <div class="buttons">
+            <router-link :to="{name: 'resume'}" class="button is-primary">View Resume</router-link>
+        </div> -->
     </main>
 </template>
 
@@ -184,70 +69,10 @@
 import Anchorheader from '../components/AnchorHeader';
 import Page from '../components/Page';
 
-import { ValidationObserver, ValidationProvider } from 'vee-validate';
-import { mapActions } from 'vuex';
-import Firestore from '../utilities/Firestore';
-import firebase from 'firebase/app';
-
 export default {
     extends: Page,
     components: {
         Anchorheader,
-        ValidationObserver,
-        ValidationProvider,
-    },
-    data() {
-        return {
-            inquiryForm: {
-                name: '',
-                email: '',
-                subject: '',
-                message: '',
-                isLoading: false,
-            },
-        };
-    },
-    methods: {
-        sendMessage() {
-            this.$refs.inquiryForm.validate().then((valid) => {
-                if (valid) {
-                    this.inquiryForm.isLoading = true;
-
-                    Firestore.collection('inquiries')
-                        .add({
-                            name: this.inquiryForm.name,
-                            email: this.inquiryForm.email,
-                            subject: this.inquiryForm.subject,
-                            message: this.inquiryForm.message,
-                            isRead: false,
-                            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                        })
-                        .catch(() => {
-                            this.showAlert({
-                                theme: 'danger',
-                                title: 'Opps...',
-                                message:
-                                    'This wasn\'t supposed to happen. Try again or if the error persists, <a href="https://github.com/juliomotol/juliomotol.github.io-source/issues" target="_blank" rel="noreferrer noopenner">submit an issue</a>.',
-                            });
-                        })
-                        .then(() => {
-                            this.inquiryForm.name = '';
-                            this.inquiryForm.email = '';
-                            this.inquiryForm.subject = '';
-                            this.inquiryForm.message = '';
-                            this.inquiryForm.isLoading = false;
-                            this.$refs.inquiryForm.reset();
-
-                            this.showAlert({
-                                theme: 'success',
-                                title: 'Message Sent!',
-                                message: "I'll get back to you as soon as I can.",
-                            });
-                        });
-                }
-            });
-        },
-        ...mapActions('alert', { showAlert: 'show' }),
     },
 };
 </script>

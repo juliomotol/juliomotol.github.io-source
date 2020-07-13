@@ -47,8 +47,6 @@
 import Page from '../components/Page';
 import WorkCard from '../components/WorkCard';
 
-import Firestore from '../utilities/Firestore';
-
 export default {
     extends: Page,
     components: {
@@ -59,9 +57,6 @@ export default {
             isFullPage: true,
             workArticles: [],
         };
-    },
-    firestore: {
-        workArticles: Firestore.collection('work_articles').where('isPublished', '==', true),
     },
 };
 </script>
