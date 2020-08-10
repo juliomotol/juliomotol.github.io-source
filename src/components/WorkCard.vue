@@ -1,12 +1,12 @@
 <template>
     <div class="card">
         <div class="card-image">
-            <figure class="image is-4by3">
+            <div class="image is-4by3">
                 <img
                     :src="this.thumbnail || 'https://bulma.io/images/placeholders/1280x960.png'"
                     :alt="title + 'thumbnail'"
                 />
-            </figure>
+            </div>
         </div>
         <div class="card-content">
             <p class="title is-4">
