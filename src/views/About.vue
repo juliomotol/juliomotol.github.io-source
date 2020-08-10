@@ -17,21 +17,20 @@
         </Anchorheader>
         <p>
             Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of
-            it. If it catches my interest, I'll definitely look it up. As of this moment, below are what I have in my
-            armory.
+            it. If it catches my interest, I'll definitely look it up. As of this moment, here is what I've used.
         </p>
         <div class="tags">
             <span class="tag is-primary is-medium">HMTL, CSS &amp; JavaScript</span>
             <span class="tag is-primary is-medium">SASS/SCSS</span>
             <span class="tag is-primary is-medium">jQuery</span>
             <span class="tag is-primary is-medium">Vue.js</span>
+            <span class="tag is-primary is-medium">Reactjs</span>
             <span class="tag is-primary is-medium">Laravel</span>
             <span class="tag is-primary is-medium">Xamarin.Forms</span>
             <span class="tag is-primary is-medium">Xamarin.Android</span>
             <span class="tag is-primary is-medium">Amazon Web Services</span>
-            <span class="tag is-primary is-medium">Google Cloud Platform</span>
             <span class="tag is-primary is-medium">Git</span>
-            <span class="tag is-primary is-medium">Jira</span>
+            <span class="tag is-primary is-medium">CI/CD</span>
             <span class="tag is-primary is-medium">Adobe Photoshop</span>
             <span class="tag is-primary is-medium">Adobe Illstrator</span>
             <span class="tag is-primary is-medium">Adobe XD</span>

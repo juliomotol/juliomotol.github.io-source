@@ -23,7 +23,7 @@ const routes = [
     {
         path: '/works/:slug',
         name: 'works-article',
-        component: () => import(/* webpackChunkName: "works" */ '../views/WorksArticle.vue'),
+        component: () => import(/* webpackChunkName: "works-articles" */ '../views/WorksArticle.vue'),
     },
     {
         path: '/contact',

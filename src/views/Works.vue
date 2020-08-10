@@ -12,14 +12,14 @@
                 <router-link
                     :to="{
                         name: 'works-article',
-                        params: { slug: workArticle.id },
+                        params: { slug: workArticle.slug },
                     }"
                 >
                     <WorkCard
                         :thumbnail="workArticle.thumbnail"
                         :title="workArticle.title"
                         :tags="workArticle.tags"
-                        :date="workArticle.createdAt.toDate()"
+                        :date="workArticle.publishDate"
                     />
                 </router-link>
             </div>
@@ -57,6 +57,26 @@ export default {
             isFullPage: true,
             workArticles: [],
         };
+    },
+    created(){
+        const config = require.context(/* webpackChunkName: "works" */ '../articles', true, /config\.json$/i);
+        config.keys().map(key => {
+            const slug = [...key.matchAll(/^\.\/(.*)\/config\.json$/g)][0][1];
+
+            let initialOptions = {...config(key)};
+
+            let options = {
+                ...initialOptions,
+                publishDate: new Date(initialOptions.publishDate),
+                slug,
+            };
+
+            this.workArticles.push(options)
+        });
+
+        this.workArticles = this.workArticles.sort((previous, current) => {
+            return new Date(current.publishDate) - new Date(previous.publishDate);
+        });
     },
 };
 </script>

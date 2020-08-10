@@ -1,35 +1,43 @@
 <template>
     <main class="work-article">
-        <h1 class="title is-1">{{ workArticle.title }}</h1>
-        <h3 class="subtitle is-6">
-            <time :datetime="workArticle.createdAt.toDate().toISOString()">
-                {{ workArticle.createdAt.toDate().toDateString() }}
-            </time>
+        <h1 class="title is-1">{{ config.title }}</h1>
+        <h3 class="subtitle is-4">
+            {{ config.description }}
         </h3>
-        <VueMarkdown
+        <section
             class="content"
-            :source="workArticle.content"
-            :anchorAttributes="{
-                target: '_blank',
-                rel: 'noreferrer noopenner',
-            }"
-        />
+            v-html="content"
+        >
+        </section>
     </main>
 </template>
 
 <script>
 import Page from '../components/Page';
-import VueMarkdown from 'vue-markdown';
 
 export default {
     extends: Page,
-    components: {
-        VueMarkdown,
-    },
     data() {
         return {
-            workArticle: [],
+            content: '',
+            config: {},
         };
     },
+    created() {
+        import(/* webpackChunkName: "works-articles" */ '../articles/'+this.$route.params.slug+'/index.md')
+            .then(module => this.content = module.default);
+        import(/* webpackChunkName: "works-articles" */ '../articles/'+this.$route.params.slug+'/config.json')
+            .then(module => {
+                let initialConfig = {...module.default};
+                
+                this.config = {
+                    ...initialConfig,
+                    publishDate: new Date(initialConfig.publishDate),
+                    slug: this.$route.params.slug,
+                };
+                
+                this.backgroundImage = this.config?.preview;
+            });
+    }
 };
 </script>

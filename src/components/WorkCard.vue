@@ -2,19 +2,24 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" :alt="title + 'thumbnail'" />
+                <img
+                    :src="this.thumbnail || 'https://bulma.io/images/placeholders/1280x960.png'"
+                    :alt="title + 'thumbnail'"
+                />
             </figure>
         </div>
         <div class="card-content">
-            <p class="title is-2">{{ title }}</p>
+            <p class="title is-4">
+                {{ title }}
+            </p>
             <p class="subtitle is-6">
                 <time :datetime="date.toISOString()">
-                    {{ date.toDateString() }}
+                    {{ formattedDate }}
                 </time>
             </p>
             <div class="tags">
                 <span v-for="(tag, index) in tags" :key="index" class="tag is-primary">
-                    {{ tag.name }}
+                    {{ tag }}
                 </span>
             </div>
         </div>
@@ -32,5 +37,23 @@ export default {
         tags: Array,
         date: Date,
     },
+    computed: {
+        formattedDate: function(){
+            let formattedDate = this.date.toDateString().split(' ');
+
+            formattedDate.shift();
+            formattedDate = formattedDate.join(' ');
+
+            return formattedDate;
+        }
+    }
 };
 </script>
+
+<style lang="scss">
+.image{
+    img{
+        object-fit: cover;
+    }
+}
+</style>
