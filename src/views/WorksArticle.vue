@@ -4,11 +4,7 @@
         <h3 class="subtitle is-4">
             {{ config.description }}
         </h3>
-        <section
-            class="content"
-            v-html="content"
-        >
-        </section>
+        <section class="content" v-html="content"></section>
     </main>
 </template>
 
@@ -24,20 +20,22 @@ export default {
         };
     },
     created() {
-        import(/* webpackChunkName: "works-articles" */ '../articles/'+this.$route.params.slug+'/index.md')
-            .then(module => this.content = module.default);
-        import(/* webpackChunkName: "works-articles" */ '../articles/'+this.$route.params.slug+'/config.json')
-            .then(module => {
-                let initialConfig = {...module.default};
-                
+        import(/* webpackChunkName: "works-articles" */ '../articles/' + this.$route.params.slug + '/index.md').then(
+            (module) => (this.content = module.default)
+        );
+        import(/* webpackChunkName: "works-articles" */ '../articles/' + this.$route.params.slug + '/config.json').then(
+            (module) => {
+                let initialConfig = { ...module.default };
+
                 this.config = {
                     ...initialConfig,
                     publishDate: new Date(initialConfig.publishDate),
                     slug: this.$route.params.slug,
                 };
-                
+
                 this.backgroundImage = this.config?.preview;
-            });
-    }
+            }
+        );
+    },
 };
 </script>
