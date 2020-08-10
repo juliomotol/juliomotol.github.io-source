@@ -4,6 +4,10 @@ module.exports = {
         themeColor: '#FFFFFF',
         msTileColor: '#FFFFFF',
         manifestOptions: { short_name: 'Julio Motol' },
+        workboxOptions: {
+            cacheId: 'juliomotol',
+            skipWaiting: true,
+        },
     },
     chainWebpack: (config) => {
         config.module
