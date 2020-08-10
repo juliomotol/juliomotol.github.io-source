@@ -17,10 +17,14 @@ $subtitle-family: $family-secondary;
 // $subtitle-strong-weight: $weight-semibold;
 // $subtitle-negative-margin: -1.25rem;
 
-@import "bulma/sass/elements/title.sass";
+@import 'bulma/sass/elements/title.sass';
 
-.title{
-    &.is-3, &.is-4, &.is-5, &.is-6, &.is-7{
+.title {
+    &.is-3,
+    &.is-4,
+    &.is-5,
+    &.is-6,
+    &.is-7 {
         font-weight: $weight-semibold;
     }
 }
