@@ -1,9 +1,9 @@
 <template>
     <main class="about content">
-        <h1 class="title is-1">
+        <h1>
             Some things about me
         </h1>
-        <h2 class="title is-2">
+        <h2>
             A Short Bio
         </h2>
         <p>
@@ -12,7 +12,7 @@
             constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange
             of toughts and ideas. I love cats and dogs, but I'm afraid I might not have time to play with them.
         </p>
-        <h2 class="title is-2">
+        <h2>
             Technical Skills
         </h2>
         <p>
@@ -35,7 +35,7 @@
             <span class="tag is-primary is-medium">Adobe Illstrator</span>
             <span class="tag is-primary is-medium">Adobe XD</span>
         </div>
-        <h2 class="title is-2">
+        <h2>
             Hobbies &amp; Interests
         </h2>
         <p>
