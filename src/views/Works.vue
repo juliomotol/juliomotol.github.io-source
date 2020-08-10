@@ -58,12 +58,12 @@ export default {
             workArticles: [],
         };
     },
-    created(){
+    created() {
         const config = require.context(/* webpackChunkName: "works" */ '../articles', true, /config\.json$/i);
-        config.keys().map(key => {
+        config.keys().map((key) => {
             const slug = [...key.matchAll(/^\.\/(.*)\/config\.json$/g)][0][1];
 
-            let initialOptions = {...config(key)};
+            let initialOptions = { ...config(key) };
 
             let options = {
                 ...initialOptions,
@@ -71,7 +71,7 @@ export default {
                 slug,
             };
 
-            this.workArticles.push(options)
+            this.workArticles.push(options);
         });
 
         this.workArticles = this.workArticles.sort((previous, current) => {

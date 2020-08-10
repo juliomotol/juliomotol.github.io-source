@@ -38,21 +38,21 @@ export default {
         date: Date,
     },
     computed: {
-        formattedDate: function(){
+        formattedDate: function() {
             let formattedDate = this.date.toDateString().split(' ');
 
             formattedDate.shift();
             formattedDate = formattedDate.join(' ');
 
             return formattedDate;
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style lang="scss">
-.image{
-    img{
+.image {
+    img {
         object-fit: cover;
     }
 }

@@ -3,18 +3,18 @@
         <h1 class="title is-1">
             Some things about me
         </h1>
-        <Anchorheader anchor="intro">
+        <h2 class="title is-2">
             A Short Bio
-        </Anchorheader>
+        </h2>
         <p>
             I'm Julio, an aspiring full-stack developer from the Philippines. I studied at the Far Eastern University -
             Makati where I finished BS Information Technology. I have passion(addiction) for creating things. I'm
             constantly thinking of ways to do things better and faster. I enjoy working in teams specially the exchange
             of toughts and ideas. I love cats and dogs, but I'm afraid I might not have time to play with them.
         </p>
-        <Anchorheader anchor="skills">
+        <h2 class="title is-2">
             Technical Skills
-        </Anchorheader>
+        </h2>
         <p>
             Exploring new programming languages and frameworks can be intimidating but I always enjoy the challenge of
             it. If it catches my interest, I'll definitely look it up. As of this moment, here is what I've used.
@@ -35,9 +35,9 @@
             <span class="tag is-primary is-medium">Adobe Illstrator</span>
             <span class="tag is-primary is-medium">Adobe XD</span>
         </div>
-        <Anchorheader anchor="skills">
+        <h2 class="title is-2">
             Hobbies &amp; Interests
-        </Anchorheader>
+        </h2>
         <p>
             I'm not just a software developer. I always find time and myself in other particular activities. I try to be
             active in my personal and leisure activites despite my workloads. Below are what drives me to work harder
@@ -60,13 +60,9 @@
 </template>
 
 <script>
-import Anchorheader from '../components/AnchorHeader';
 import Page from '../components/Page';
 
 export default {
     extends: Page,
-    components: {
-        Anchorheader,
-    },
 };
 </script>

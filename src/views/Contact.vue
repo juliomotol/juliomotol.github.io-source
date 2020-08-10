@@ -3,9 +3,9 @@
         <h1 class="title is-1">
             Get in touch
         </h1>
-        <Anchorheader anchor="socail_accounts">
+        <h2 class="title is-2">
             Social Accounts
-        </Anchorheader>
+        </h2>
         <p>
             You can find me in most social media sites (though I may not be active in posting). Hit me up if you ever
             like it or follow me to keep in the touch with the following social media site.
@@ -48,16 +48,16 @@
                 <span>Stack Overflow</span>
             </a>
         </div>
-        <Anchorheader anchor="send_a_message">
+        <h2 class="title is-2">
             Send a Message
-        </Anchorheader>
+        </h2>
         <p>
             Got a question, project needed to made or a lovely message that you want to send? Send me an email at
             <a href="mailto:julio.motol89@gmail.com">julio.motol89@gmail.com</a>.
         </p>
-        <!-- <Anchorheader anchor="resume">
+        <!-- <h2 class="title is-2">
             Resume 
-        </Anchorheader>
+        </h2>
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolore magna aliquyam erat, sed diam</p>
         <div class="buttons">
             <router-link :to="{name: 'resume'}" class="button is-primary">View Resume</router-link>
@@ -66,14 +66,10 @@
 </template>
 
 <script>
-import Anchorheader from '../components/AnchorHeader';
 import Page from '../components/Page';
 
 export default {
     extends: Page,
-    components: {
-        Anchorheader,
-    },
 };
 </script>
 
