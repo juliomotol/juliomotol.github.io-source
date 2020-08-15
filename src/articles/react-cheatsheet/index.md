@@ -1,6 +1,6 @@
-[React Cheatsheet](https://juliomotol.github.io/react-cheatsheet/) is provides a better API Reference navigation for React and is inspired by https://overapi.com.
+[React Cheatsheet](https://juliomotol.github.io/react-cheatsheet/) provides a better API Reference navigation for React and is inspired by https://overapi.com.
 
-I made this application because I find it easier to learn a new framework with a cheatsheet but there wasn't any that I liked. So I decided to make my own.
+I made this application because I find it easier to learn a new framework with a cheatsheet but I couldn't find any that I liked. So I decided to make my own.
 
 To know more about the tought process, read the [Medium article](https://medium.com/@julio.motol89/how-i-learned-react-and-made-a-cheatsheet-out-of-it-784f1204540e) that I wrote.
 
