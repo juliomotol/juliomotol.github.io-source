@@ -44,7 +44,7 @@
             Need a project done?
         </h2>
         <p>
-            I'm up any for freelance work. If you think I'm the right person for your new project, feel free to hit me up!
+            I'm up for any freelance work. If you think I'm the right person for your new project, feel free to hit me up!
         </p>
         <div class="buttons">
             <router-link :to="{ name: 'contact' }" class="button is-primary">Get in touch</router-link>
