@@ -1,0 +1,7 @@
+$breadcrumb-item-color-dark: $link-dark;
+$breadcrumb-item-hover-color-dark: $link-hover-dark;
+$breadcrumb-item-active-color-dark: $text-strong-dark;
+
+$breadcrumb-item-separator-color-dark: $grey-lighter;
+
+@import 'bulma-prefers-dark/sass/components/breadcrumb.sass';

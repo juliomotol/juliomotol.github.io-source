@@ -1,6 +1,22 @@
 <template>
     <main class="work-article">
-        <h1 class="title is-1">{{ config.title }}</h1>
+        <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+            <ul>
+                <li>
+                    <router-link :to="{ name: 'works' }">
+                        Works
+                    </router-link>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page">
+                        {{ config.title }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="title is-1">
+            {{ config.title }}
+        </h1>
         <h3 class="subtitle is-4">
             {{ config.description }}
         </h3>
@@ -26,7 +42,7 @@ export default {
         import(/* webpackChunkName: "works-articles" */ '../articles/' + this.$route.params.slug + '/config.json').then(
             (module) => {
                 let initialConfig = { ...module.default };
-                
+
                 const thumbnail = require('../articles/' + initialConfig.slug + '/' + initialConfig.thumbnail);
                 const preview = require('../articles/' + initialConfig.slug + '/' + initialConfig.preview);
 
