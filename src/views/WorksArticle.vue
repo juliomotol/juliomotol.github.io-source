@@ -26,11 +26,15 @@ export default {
         import(/* webpackChunkName: "works-articles" */ '../articles/' + this.$route.params.slug + '/config.json').then(
             (module) => {
                 let initialConfig = { ...module.default };
+                
+                const thumbnail = require('../articles/' + initialConfig.slug + '/' + initialConfig.thumbnail);
+                const preview = require('../articles/' + initialConfig.slug + '/' + initialConfig.preview);
 
                 this.config = {
                     ...initialConfig,
                     publishDate: new Date(initialConfig.publishDate),
-                    slug: this.$route.params.slug,
+                    thumbnail,
+                    preview,
                 };
 
                 this.backgroundImage = this.config?.preview;

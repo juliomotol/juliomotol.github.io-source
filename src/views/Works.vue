@@ -44,7 +44,8 @@
             Need a project done?
         </h2>
         <p>
-            I'm up for any freelance work. If you think I'm the right person for your new project, feel free to hit me up!
+            I'm up for any freelance work. If you think I'm the right person for your new project, feel free to hit me
+            up!
         </p>
         <div class="buttons">
             <router-link :to="{ name: 'contact' }" class="button is-primary">Get in touch</router-link>
@@ -55,6 +56,7 @@
 <script>
 import Page from '../components/Page';
 import WorkCard from '../components/WorkCard';
+// import path from 'path';
 
 export default {
     extends: Page,
@@ -68,19 +70,21 @@ export default {
         };
     },
     created() {
-        const config = require.context(/* webpackChunkName: "works" */ '../articles', true, /config\.json$/i);
-        config.keys().map((key) => {
-            const slug = [...key.matchAll(/^\.\/(.*)\/config\.json$/g)][0][1];
+        const configs = require.context(/* webpackChunkName: "works" */ '../articles', true, /config\.json$/i);
+        configs.keys().map((key) => {
+            const initialConfig = { ...configs(key) };
 
-            let initialOptions = { ...config(key) };
+            const thumbnail = require('../articles/' + initialConfig.slug + '/' + initialConfig.thumbnail);
+            const preview = require('../articles/' + initialConfig.slug + '/' + initialConfig.preview);
 
-            let options = {
-                ...initialOptions,
-                publishDate: new Date(initialOptions.publishDate),
-                slug,
+            let config = {
+                ...initialConfig,
+                publishDate: new Date(initialConfig.publishDate),
+                thumbnail,
+                preview,
             };
 
-            this.workArticles.push(options);
+            this.workArticles.push(config);
         });
 
         this.workArticles = this.workArticles.sort((previous, current) => {
