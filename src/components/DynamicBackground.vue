@@ -3,16 +3,15 @@
         <img
             class="jm-background__image"
             :src="oldUrl"
-            alt="background"
+            alt="background image"
             :style="{ right: backgroundOffset + 'px' }"
-            ref="imageBackgroundFallback"
         />
         <img
             :class="['jm-background__image is-preview', isLoaded ? 'is-active' : '']"
             :src="currentUrl"
-            alt="background"
+            alt="background image"
             :style="{ right: backgroundOffset + 'px' }"
-            ref="imageBackground"
+            ref="image"
         />
     </div>
 </template>
@@ -32,9 +31,15 @@ export default {
     },
     computed: {
         currentUrl() {
-            return (
-                this.backgroundImage || 'https://source.unsplash.com/user/juliomotol?load=' + this.backgroundIncrements
+            const images = require.context(
+                /* webpackChunkName: "dynamic-backgrounds" */ '../assets/backgrounds',
+                true,
+                /\.jpg$/i
             );
+            const imagesKeys = images.keys();
+            const randomImageKey = imagesKeys[Math.floor(Math.random() * imagesKeys.length)];
+
+            return this.backgroundImage || images(randomImageKey) + '?load=' + this.backgroundIncrements;
         },
     },
     watch: {
@@ -47,9 +52,9 @@ export default {
         },
     },
     mounted() {
-        this.$refs.imageBackground.addEventListener('load', () => {
+        this.$refs.image.addEventListener('load', () => {
             this.isLoaded = true;
-            this.backgroundOffset = (this.$refs.imageBackground.width - this.$refs.imageBackground.height) / -2;
+            this.backgroundOffset = (this.$refs.image.width - this.$refs.image.height) / -2;
         });
     },
 };
